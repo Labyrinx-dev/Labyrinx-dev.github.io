@@ -2,10 +2,10 @@
 layout: default
 ---
 
-# Labyrinx — Python Code Obfuscation
+# Labyrinx — AI Code Protection
 
 {: .text-center}
-**7 layers of protection. Build once, protect everything.**
+**Safeguard your ML intellectual property. 7 layers of protection.**
 
 ---
 
