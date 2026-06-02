@@ -41,7 +41,7 @@ Your .py files  →  Labyrinx  →  Protected .exe
 4. **Distribute** — single `.exe` with built-in license key system
 
 {: .text-center}
-*99.75% compatibility — tested against 5,760 files from 11 open-source projects*
+*Tested against 11 major open-source Python projects*
 
 ---
 
