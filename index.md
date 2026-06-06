@@ -30,25 +30,20 @@ Labyrinx obfuscates your Python source code and packages it into a single `.exe`
 
 ## LBRX Native Packager — How the EXE Works
 
-Unlike PyInstaller-based packagers, Labyrinx uses a custom C bootloader and proprietary container format:
-
-```
-[bootloader.exe] [AES-256-CTR encrypted payload] [LBRX footer]
-```
+Unlike PyInstaller-based packagers, Labyrinx uses a custom C bootloader and a proprietary, fully encrypted container format. Your code, dependencies, and runtime files are bundled into a single `.exe` with military-grade protection:
 
 | Feature | Detail |
 |---------|--------|
-| **Encryption** | AES-256-CTR with per-EXE random keys (every build has a unique key) |
-| **Key recovery** | Key XOR'd against SHA-256 of ciphertext, stored in footer — no compile-time constants |
-| **Integrity verification** | SHA-256 of decrypted payload checked before extraction — catches tampering |
-| **.pyd hardening** | SHA-256 hashes of all `.pyd` runtime files embedded in encrypted payload, verified pre-import |
-| **Zero-trace cleanup** | Two-phase: `MoveFileEx(DELAY_UNTIL_REBOOT)` + self-destruct batch script — no files left on disk |
-| **BCrypt SHA-256** | Uses Windows `bcrypt.dll` — no custom crypto, FIPS-compliant |
-| **LZNT1 compression** | Text files compressed via Windows RtlCompressBuffer — saves 30-45% on payload size |
-| **Deep import scan** | AST-based recursive import resolution — package `reportlab` alone resolves the full chain: `rlPyCairo` → `pycairo` → `cairo` + `Pillow` → `PIL` + `freetype` |
+| **AES-256 encryption** | Every EXE gets a unique random key — no two builds are alike |
+| **Tamper-proof** | Cryptographic integrity verification prevents any modification to the packaged EXE |
+| **Runtime hardening** | All `.pyd` native modules verified before loading — replacement is detected and blocked |
+| **Zero-trace execution** | All extracted files are securely wiped after the application exits — nothing left on disk |
+| **Smart compression** | Text assets compressed automatically, saving 30-45% on payload size |
+| **Deep import scan** | AST-based recursive dependency resolution — specify `reportlab` and Labyrinx automatically pulls the full chain: `rlPyCairo` → `pycairo` → `cairo` + `Pillow` → `PIL` + `freetype` |
+| **Standard crypto** | Uses Windows built-in cryptographic providers — no hand-rolled algorithms |
 
 {: .text-center}
-*Two packagers included: LBRX Native (proprietary) and PyInstaller (standard).*
+*Two packagers included: LBRX Native (proprietary, recommended) and PyInstaller (standard).*
 
 ---
 
