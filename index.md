@@ -107,8 +107,31 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 {: .text-center}
 *All tiers include lifetime access. No per-build fees. No royalties.*
 
+---
+
+## Get Started
+
+### 1. Download (Free)
+
+`Labyrinx.exe` runs in **Freemium** mode out of the box — Level 1–2 obfuscation, standard packager. No registration required.
+
 {: .text-center}
-[**Subscribe Now**](https://labyrinx.lemonsqueezy.com) — instant license key delivery after payment.
+[**Download Labyrinx (Free)**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)
+
+{: .small}
+*Includes GUI + CLI + User Manual. Windows 10+, 64-bit. No Python needed.*
+
+### 2. Subscribe to Upgrade
+
+Unlock Pro or Enterprise features instantly. Your license key is delivered automatically after payment.
+
+{: .text-center}
+[**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/checkout/pro) — Levels 1–4, LBRX Native, string encryption, license system  
+[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/enterprise) — Level 6 VM, anti-debug, module encryption, per-EXE keys, zero-trace
+
+### 3. Activate
+
+Enter your license key in Labyrinx to unlock your tier. The key is valid for the duration of your subscription. Cancel anytime — your key continues working until the end of the billing period.
 
 ---
 
@@ -138,15 +161,9 @@ A: Windows 10 and later, 64-bit.
 ---
 
 {: .text-center}
-## Downloads
+## All Downloads
 
-| Tool | Description | Size |
-|------|-------------|------|
-| **Labyrinx GUI** | Point-and-click obfuscation and EXE builder | 125 MB |
-| **Labyrinx CLI** | Command-line for CI/CD and automation | 125 MB |
-| **HWID Tool** | Customers run this to get their machine ID | 10 MB |
-| **License Creator** | Generate license keys for your customers | 10 MB |
-| **User Manual** | Full documentation and CLI reference | 23 KB |
+[Browse the full release folder](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release) — includes GUI, CLI, HWID Tool, License Creator, and User Manual.
 
 {: .text-center}
 [**Browse All Downloads**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)
