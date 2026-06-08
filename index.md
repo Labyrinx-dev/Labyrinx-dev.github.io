@@ -137,14 +137,20 @@ A: Windows 10 and later, 64-bit.
 {: .text-center}
 ## Downloads
 
-| | |
-|---|---|
-| **Labyrinx GUI** | `Labyrinx.exe` — Point-and-click obfuscation and EXE builder |
-| **Labyrinx CLI** | `labyrinx-cli.exe` — Command-line for CI/CD and automation |
-| **User Manual** | Comprehensive guide covering all features, CLI reference, and troubleshooting |
+| Tool | Description | Size |
+|------|-------------|------|
+| **Labyrinx GUI** | Point-and-click obfuscation and EXE builder | 125 MB |
+| **Labyrinx CLI** | Command-line for CI/CD and automation | 125 MB |
+| **HWID Tool** | Customers run this to get their machine ID | 10 MB |
+| **License Creator** | Generate license keys for your customers | 10 MB |
+| **User Manual** | Full documentation and CLI reference | 23 KB |
 
-{: .text-center .small}
-*Download links provided with your license. [Contact us](#contact) for a trial.*
+{: .text-center}
+[**Browse All Downloads**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)
+
+{: .small}
+*System requirements: Windows 10+, 64-bit. No Python installation needed.*<br>
+*For direct download links and trial licenses, [contact us](#contact).*
 
 ---
 
