@@ -163,7 +163,8 @@ A: Windows 10 and later, 64-bit.
 {: .text-center}
 ## All Downloads
 
-[Browse the full release folder](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release) — includes GUI, CLI, HWID Tool, License Creator, and User Manual.
+[Browse the release folder](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release) — includes `Labyrinx.exe`, `labyrinx-cli.exe`, and the User Manual.  
+*HWID Tool and License Creator are built from within `Labyrinx.exe` (Admin panel).*
 
 {: .text-center}
 [**Browse All Downloads**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)

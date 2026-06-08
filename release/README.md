@@ -1,21 +1,24 @@
-# Labyrinx — Store Release
+# Labyrinx â€” Store Release
 
 ## Files
 
 | File | Description |
 |------|-------------|
-| `Labyrinx.exe` | GUI launcher — point-and-click obfuscation and EXE builder |
-| `labyrinx-cli.exe` | CLI tool — for CI/CD pipelines and automation |
-| `get_hwid.exe` | Hardware ID tool — customers run this to get their machine ID for license binding |
-| `license_creator.exe` | License Creator — generates license keys for your customers |
+| `Labyrinx.exe` | GUI â€” point-and-click obfuscation, EXE builder, and admin tools |
+| `labyrinx-cli.exe` | CLI â€” for CI/CD pipelines and automation |
 | `LABYRINX_USER_MANUAL.md` | Full user manual with CLI reference and troubleshooting |
 
 ## Quick Start
 
-1. Run `Labyrinx.exe` for the graphical interface
-2. Or use `labyrinx-cli.exe --help` for command-line options
-3. Distribute `get_hwid.exe` to customers who need hardware-locked licenses
-4. Use `license_creator.exe` to generate license keys
+1. Download `Labyrinx.exe` â€” runs in **Freemium** mode (Level 1â€“2) for free
+2. Subscribe to **Pro** ($9/mo) or **Enterprise** ($29/mo) to unlock higher levels
+3. Enter your license key to activate
+
+## Built-in Tools
+
+The following are built from within `Labyrinx.exe` (Admin panel):
+- **HWID Tool** â€” for hardware-locked license binding
+- **License Creator** â€” for generating customer license keys
 
 ## System Requirements
 
