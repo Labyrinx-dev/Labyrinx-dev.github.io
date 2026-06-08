@@ -116,7 +116,7 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 `Labyrinx.exe` runs in **Freemium** mode out of the box — Level 1–2 obfuscation, standard packager. No registration required.
 
 {: .text-center}
-[**Download Labyrinx (Free)**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)
+[**Download Labyrinx (125 MB)**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe)
 
 {: .small}
 *Includes GUI + CLI + User Manual. Windows 10+, 64-bit. No Python needed.*
