@@ -126,8 +126,8 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 Unlock Pro or Enterprise features instantly. Your license key is delivered automatically after payment.
 
 {: .text-center}
-[**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/checkout/pro) — Levels 1–4, LBRX Native, string encryption, license system  
-[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/enterprise) — Level 6 VM, anti-debug, module encryption, per-EXE keys, zero-trace
+[**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/buy/1125927) — Levels 1–4, LBRX Native, string encryption, license system  
+[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/buy/1125914) — Level 6 VM, anti-debug, module encryption, per-EXE keys, zero-trace
 
 ### 3. Activate
 
