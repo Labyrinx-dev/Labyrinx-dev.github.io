@@ -155,7 +155,7 @@ A: Windows 10 and later, 64-bit.
 For trial requests, licensing inquiries, and enterprise pricing:
 
 {: .text-center}
-📧 **labyrinx.dev@gmail.com**
+📧 **labyrinx@yahoo.com**
 
 {: .text-center}
 🐙 **[github.com/Labyrinx-dev](https://github.com/Labyrinx-dev)**
