@@ -4,9 +4,8 @@
 
 | File | Description |
 |------|-------------|
-| `Labyrinx.exe` | GUI — point-and-click obfuscation, EXE builder, and admin tools |
-| `labyrinx-cli.exe` | CLI — for CI/CD pipelines and automation |
-| `LABYRINX_USER_MANUAL.md` | Full user manual with CLI reference and troubleshooting |
+| `Labyrinx.exe` | GUI — obfuscation, EXE builder, admin tools (CLI included) |
+| `LABYRINX_USER_MANUAL.md` | Full user manual and CLI reference |
 
 ## Quick Start
 
