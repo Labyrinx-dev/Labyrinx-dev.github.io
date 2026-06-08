@@ -107,6 +107,9 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 {: .text-center}
 *All tiers include lifetime access. No per-build fees. No royalties.*
 
+{: .text-center}
+[**Subscribe Now**](https://labyrinx.lemonsqueezy.com) — instant license key delivery after payment.
+
 ---
 
 ## FAQ
