@@ -5,13 +5,13 @@ layout: default
 # Labyrinx — Python Code Protection
 
 {: .text-center}
-**Turn Python projects into protected, standalone Windows executables. Seven layers of obfuscation. Proprietary EXE format. Zero-trace execution.**
+**Turn Python projects into hardened, standalone Windows executables. Seven layers of obfuscation. Encrypted container format.**
 
 ---
 
 ## What Labyrinx Does
 
-Labyrinx obfuscates your Python source code and packages it into a single `.exe` using the **LBRX Native Packager** — a proprietary, encrypted container format resistant to common extraction tools. No Python installation required on the target machine.
+Labyrinx obfuscates your Python source code and packages it into a single `.exe` using the **LBRX Native Packager** — an encrypted container format designed to resist common extraction tools. No Python installation required on the target machine.
 
 | Layer | Protection | Level |
 |-------|-----------|-------|
@@ -24,20 +24,20 @@ Labyrinx obfuscates your Python source code and packages it into a single `.exe`
 | 7. Code Virtualization | Custom stack-based VM replaces Python bytecode — 49 opcodes with encrypted constants | 6 |
 
 {: .text-center}
-*No other Python obfuscator ships a code VM.*
+*Includes a custom code VM (49 opcodes) for Level 6 protection.*
 
 ---
 
 ## LBRX Native Packager
 
-Unlike standard packagers, Labyrinx uses a custom native bootloader and a fully encrypted container format. Your code, dependencies, and runtime are bundled into a single `.exe`:
+Unlike standard packagers, Labyrinx uses a custom native bootloader and an encrypted container format. Your code, dependencies, and runtime are bundled into a single `.exe`:
 
 | Feature | Detail |
 |---------|--------|
 | **Per-EXE encryption** | Every build gets a unique random key — no two EXEs are alike |
-| **Tamper detection** | Cryptographic integrity verification prevents modification to the packaged application |
-| **Runtime hardening** | Native components verified before loading — replacement is detected and blocked |
-| **Zero-trace execution** | All temporary files securely wiped after the application exits |
+| **Tamper detection** | Cryptographic integrity verification detects modification to the packaged application |
+| **Runtime hardening** | Native components verified before loading — replacement is detected |
+| **Cache control** | Option to delete extracted files on exit (cache disabled) |
 | **Smart compression** | Text assets compressed automatically, saving significant payload size |
 | **Deep dependency resolution** | AST-based recursive import scanner resolves transitive dependencies automatically |
 | **Dual-mode support** | Build EXEs with or without a console window — non-console builds show an extraction progress display |
@@ -47,13 +47,13 @@ Unlike standard packagers, Labyrinx uses a custom native bootloader and a fully 
 
 ---
 
-## Proven Across the Python Ecosystem
+## Tested Across the Python Ecosystem
 
-The LBRX Native Packager has been stress-tested against a broad range of real-world Python projects spanning **web frameworks, ORMs, data science libraries, CLI tools, imaging libraries, PDF generators, and cryptographic toolkits**. All pass at 100%.
+The LBRX Native Packager has been tested against a broad range of real-world Python projects spanning **web frameworks, ORMs, data science libraries, CLI tools, imaging libraries, PDF generators, and cryptographic toolkits**.
 
-### Tamper Resistance — All Attacks Blocked
+### Tamper Resistance
 
-Multiple tampering vectors were tested against the bootloader. Every attempt was detected and blocked before any code execution occurred.
+Multiple tampering vectors were tested against the bootloader. Tampering attempts are detected before code execution occurs.
 
 ### Protection Scaling
 
@@ -102,7 +102,7 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 | **Installer Builder** | -- | Yes | Yes |
 | **LBRX Native Packager** | -- | Yes | Yes |
 | **Per-EXE Keys** | -- | -- | Yes |
-| **Zero-Trace Cleanup** | -- | -- | Yes |
+| **Cache Control** | -- | -- | Yes |
 
 {: .text-center}
 *All tiers include lifetime access. No per-build fees. No royalties.*
@@ -127,7 +127,7 @@ Unlock Pro or Enterprise features instantly. Your license key is delivered autom
 
 {: .text-center}
 [**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92) — Levels 1–4, LBRX Native, string encryption, license system  
-[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3) — Level 6 VM, anti-debug, module encryption, per-EXE keys, zero-trace
+[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3) — Level 6 VM, anti-debug, module encryption, per-EXE keys, cache control
 
 ### 3. Activate
 
@@ -144,7 +144,7 @@ A: Yes. Labyrinx has been stress-tested against a wide range of real-world libra
 A: No. The EXE bundles the complete Python runtime — fully standalone.
 
 **Q: Can my EXE be unpacked?**
-A: Not with the LBRX Native packager. Unlike standard packagers that store code in plain formats, LBRX uses per-EXE encryption, cryptographic integrity verification, and an encrypted file table. Common extraction tools cannot parse the proprietary format.
+A: The LBRX Native packager uses per-EXE encryption, cryptographic integrity verification, and an encrypted file table. Standard extraction tools do not support this format. No local software protection is absolute against a determined attacker with physical access.
 
 **Q: Is my source code recoverable at Level 6?**
 A: At Level 6, the original Python bytecode is entirely replaced with custom VM bytecode. Even if the encrypted payload were somehow accessed, what's inside is a stream of VM opcodes with no mapping back to original Python source.

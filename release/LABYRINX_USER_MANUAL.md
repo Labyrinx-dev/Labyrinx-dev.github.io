@@ -67,7 +67,7 @@ labyrinx-cli.exe -p ./my_project --level 5 --native-packager --with-license secr
 
 ## 3. LBRX Native Packager
 
-The LBRX Native Packager is Labyrinx's proprietary EXE format — designed to be resistant to common extraction tools. It uses a custom native bootloader, per-build encryption, and a fully encrypted container format.
+The LBRX Native Packager is Labyrinx's proprietary EXE format — designed to be resistant to common extraction tools. It uses a custom native bootloader, per-build encryption, and an encrypted container format.
 
 ### 3.1 Architecture
 
@@ -79,7 +79,7 @@ At a high level, the bootloader:
 3. Extracts all files (Python runtime, your code, dependencies) to a temporary location
 4. Verifies runtime module integrity before loading
 5. Initializes Python and runs your application
-6. Securely wipes all extracted files on exit
+6. Cleans up extracted files on exit (when cache is disabled)
 
 ### 3.2 Security Features
 
@@ -91,7 +91,7 @@ At a high level, the bootloader:
 | **Runtime hardening** | Runtime modules verified before loading — replacement is detected and blocked |
 | **Standard cryptography** | Uses industry-standard algorithms via the operating system's cryptographic providers |
 | **Smart compression** | Text assets compressed automatically — significant payload savings |
-| **Zero-trace cleanup** | All extracted files securely wiped after the application exits |
+| **Cache cleanup** | Extracted files cleaned up after the application exits |
 
 ### 3.3 Integrity & Tamper Detection
 
@@ -110,7 +110,7 @@ The bootloader writes a diagnostic log to the system temporary directory on ever
 | Per-build keys | Yes | No |
 | Integrity verification | Full payload | None |
 | Runtime hardening | Verified pre-load | None |
-| Zero-trace cleanup | Yes | No |
+| Cache cleanup | Yes | No |
 | Compression | Native | Standard |
 | Minimum EXE size | ~29 MB | ~8 MB |
 | Availability | Pro + Enterprise | All tiers |
@@ -271,7 +271,7 @@ License keys are text strings that encode customer name, expiry timestamp, tier,
 |---|---|---|
 | **Freemium** | Level 2 | Name obfuscation, standard packager |
 | **Pro** | Level 4 | + String encryption, full CF, LBRX Native, license system |
-| **Enterprise** | Level 6 | + Module encryption, anti-debug, code VM, per-build keys, zero-trace |
+| **Enterprise** | Level 6 | + Module encryption, anti-debug, code VM, per-build keys, cache control |
 
 ### 6.4 License Expiry
 
@@ -518,7 +518,7 @@ A: Yes. The secret is embedded within obfuscated, encrypted modules inside an en
 A: Yes. Generate a new license key without HWID binding, or generate one with the new machine's HWID.
 
 **Q: Can my LBRX Native EXE be unpacked?**  
-A: No. LBRX Native uses a proprietary format with per-build encryption. Common extraction tools cannot parse LBRX EXEs.
+A: No. LBRX Native uses a proprietary format with per-build encryption. LBRX EXEs use a custom format that standard extraction tools do not support.
 
 **Q: What is the minimum EXE size?**  
 A: Approximately 29 MB for a minimal application (includes Python runtime, standard library, and Labyrinx runtime). Larger projects scale primarily with their dependencies.

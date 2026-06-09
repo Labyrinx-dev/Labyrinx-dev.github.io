@@ -1,4 +1,4 @@
 title: Labyrinx
-description: Python Code Obfuscation — 7 layers of protection. Proprietary LBRX Native EXE packager with AES-256-CTR encryption, per-EXE keys, zero-trace execution.
+description: Python Code Obfuscation — 7 layers of protection. LBRX Native EXE packager with AES-256-CTR encryption and per-EXE keys.
 theme: jekyll-theme-cayman
 show_downloads: false
