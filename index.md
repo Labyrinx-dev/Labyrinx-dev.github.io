@@ -138,7 +138,7 @@ Enter your license key in Labyrinx to unlock your tier. The key is valid for the
 ## FAQ
 
 **Q: Does it work with major Python libraries and frameworks?**
-A: Yes. Labyrinx has been stress-tested against a wide range of real-world libraries — web frameworks, ORMs, data science toolkits, CLI applications, imaging libraries, PDF generators, and cryptographic libraries. All pass at 100%. The deep import scanner automatically resolves multi-level transitive dependencies.
+A: Yes. Labyrinx has been tested against a wide range of real-world libraries — web frameworks, ORMs, data science toolkits, CLI applications, imaging libraries, PDF generators, and cryptographic libraries. The deep import scanner automatically resolves multi-level transitive dependencies.
 
 **Q: Does the protected EXE need Python installed?**
 A: No. The EXE bundles the complete Python runtime — fully standalone.
