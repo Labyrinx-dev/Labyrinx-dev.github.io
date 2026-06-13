@@ -74,7 +74,7 @@ Tested on a real Flask application with 20 modules, 24 compiled files, ~40 Pytho
 |---|---|---|
 | **Mechanism** | Gzip compression + base64 | AES-256-CTR encryption |
 | **Build speed** | Fast (~75s) | Moderate (~90s) |
-| **Runtime PYDs** | 1 (_lx_str) | 5 (_lx_aes, _lx_chk, _lx_loader, _lx_str, _lx_vm) |
+| **Runtime PYDs** | 1 | 5 |
 | **After .pyd decompilation** | Gzip stream visible | Opaque ciphertext |
 | **Price** | $9/month | $29/month |
 

@@ -107,7 +107,7 @@ Labyrinx offers six cumulative protection levels.
 |---|---|---|
 | **Mechanism** | Gzip compression + base64 | AES-256-CTR encryption |
 | **Cython speed** | Instant (2-line stub) | Instant (2-line stub) |
-| **Runtime PYDs** | 1 (_lx_str for AES strings) | 5 (_lx_aes, _lx_chk, _lx_loader, _lx_str, _lx_vm) |
+| **Runtime PYDs** | 1 | 5 |
 | **Decompilation** | Gzip stream visible | Opaque ciphertext |
 | **Build time** | ~75 seconds | ~90 seconds |
 
