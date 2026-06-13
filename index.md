@@ -5,86 +5,80 @@ layout: default
 # Labyrinx — Python Code Protection
 
 {: .text-center}
-**Turn Python projects into hardened, standalone Windows executables. Seven layers of obfuscation. Encrypted container format.**
+**Turn Python projects into protected, self-contained application folders. Seven layers of obfuscation. Native x64 compilation via Cython. No Python install required on the target machine.**
 
 ---
 
 ## What Labyrinx Does
 
-Labyrinx obfuscates your Python source code and packages it into a single `.exe` using the **LBRX Native Packager** — an encrypted container format designed to resist common extraction tools. No Python installation required on the target machine.
+Labyrinx obfuscates your Python source code, compiles it to native x64 machine code via Cython, and assembles a self-contained folder your customers can run immediately. No EXE packing — just clean, AV-friendly distribution.
 
-| Layer | Protection | Level |
-|-------|-----------|-------|
-| 1. Name Obfuscation | Variables, functions, and classes renamed to random identifiers | 2 |
-| 2. String Encryption | Every string literal packed into an encrypted blob | 3 |
-| 3. Control Flow Flattening | Function logic restructured into switch-case state machines | 4 |
-| 4. Dead Code Injection | Opaque predicates intersperse junk blocks between real statements | 4 |
-| 5. Anti-Debug | Multiple debugger detection techniques covering both user-mode and kernel-mode approaches | 5 |
-| 6. Module Encryption | Entire `.py` modules AES-256 encrypted — decrypted only in memory at runtime | 5 |
-| 7. Code Virtualization | Custom stack-based VM replaces Python bytecode — 49 opcodes with encrypted constants | 6 |
+| Layer | Protection | Tier |
+|-------|-----------|------|
+| 1. Name Obfuscation | Variables, functions, and classes renamed to random tokens | Freemium |
+| 2. Control Flow Flattening | Function logic restructured into switch-case state machines | Pro |
+| 3. String Encryption | Every string literal AES-encrypted — invisible to `strings.exe` | Pro |
+| 4. Module Encryption (gzip) | Entire source compressed into a blob — decompile → gzip stream | Pro |
+| 5. Module Encryption (AES-256) | Entire source AES-256-CTR encrypted — decompile → opaque ciphertext | Enterprise |
+| 6. Anti-Debug | 6 detection techniques covering user-mode and kernel-mode debuggers | Enterprise |
+| 7. Code Virtualization | Custom 49-opcode stack VM with per-build randomized bytecode | Enterprise |
 
 {: .text-center}
-*Includes a custom code VM (49 opcodes) for Level 6 protection.*
+*All tiers produce native x64 .pyd files via Cython. Pro adds gzip module encryption. Enterprise adds AES-256 + VM.*
 
 ---
 
-## LBRX Native Packager
+## Output: Embedded Python Folder
 
-Unlike standard packagers, Labyrinx uses a custom native bootloader and an encrypted container format. Your code, dependencies, and runtime are bundled into a single `.exe`:
+Labyrinx produces a **self-contained folder** — not a single EXE. This approach:
 
-| Feature | Detail |
-|---------|--------|
-| **Per-EXE encryption** | Every build gets a unique random key — no two EXEs are alike |
-| **Tamper detection** | Cryptographic integrity verification detects modification to the packaged application |
-| **Runtime hardening** | Native components verified before loading — replacement is detected |
-| **Cache control** | Option to delete extracted files on exit (cache disabled) |
-| **Smart compression** | Text assets compressed automatically, saving significant payload size |
-| **Deep dependency resolution** | AST-based recursive import scanner resolves transitive dependencies automatically |
-| **Dual-mode support** | Build EXEs with or without a console window — non-console builds show an extraction progress display |
+- **Avoids antivirus false positives** — no EXE packing, no shellcode
+- **Starts instantly** — no temp extraction, no decryption overhead
+- **Supports incremental updates** — replace individual `.pyd` files
+- **AV-friendly** — plain files, no obfuscated packer signatures
+
+```
+MyApp/
+├── MyApp.exe              ← click-to-run (~30 KB)
+├── MyApp.bat              ← fallback launcher
+├── python313.dll          ← embedded Python (no install needed)
+├── python313.zip          ← compressed stdlib
+├── *.pyd                  ← your code (Cython → native x64)
+├── _lx_*.pyd              ← Labyrinx runtime (encryption, VM)
+└── Lib/site-packages/     ← third-party deps
+```
 
 {: .text-center}
-*Two packagers included: LBRX Native (proprietary, recommended) and the standard packager.*
+*Zip the folder and ship it. Customers extract and double-click.*
 
 ---
 
-## Tested Across the Python Ecosystem
+## Real Build Performance
 
-The LBRX Native Packager has been tested against a broad range of real-world Python projects spanning **web frameworks, ORMs, data science libraries, CLI tools, imaging libraries, PDF generators, and cryptographic toolkits**.
+Tested on a real Flask application with 20 modules, 24 compiled files, ~40 Python packages:
 
-### Tamper Resistance
-
-Multiple tampering vectors were tested against the bootloader. Tampering attempts are detected before code execution occurs.
-
-### Protection Scaling
-
-| Level | Startup | Features Active |
-|-------|---------|-----------------|
-| 1 | Instant | Base obfuscation |
-| 2 | Instant | + Name obfuscation |
-| 3 | Instant | + String encryption |
-| 4 | Instant | + Control flow flattening |
-| 5 | Fast | + Anti-debug + Module encryption |
-| 6 | Fast | + 49-opcode code VM |
+| Tier | Level | Build Time | Output Size |
+|------|-------|-----------|-------------|
+| **Freemium** | 2 | ~40 seconds | ~151 MB |
+| **Pro** | 4 | ~75 seconds | ~140 MB |
+| **Enterprise** | 6 | ~90 seconds | ~153 MB |
 
 {: .small}
-*Measured on a typical mid-range Windows workstation. Actual times vary by project.*
+*Windows 10 x64, Python 3.13, Cython + MSVC. All builds produce fully functional applications.*
 
 ---
 
-## How It Works
+## Module Encryption Comparison
 
-```
-Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
-                                           -->  Standalone, no Python needed
-```
+| | Pro (gzip) | Enterprise (AES-256-CTR) |
+|---|---|---|
+| **Mechanism** | Gzip compression + base64 | AES-256-CTR encryption |
+| **Build speed** | Fast (~75s) | Moderate (~90s) |
+| **Runtime deps** | None (stdlib only) | 4 native .pyd files |
+| **After .pyd decompilation** | Gzip stream visible | Opaque ciphertext |
+| **Price** | $9/month | $29/month |
 
-1. **Open Labyrinx** — point it at your Python project or single `.py` file
-2. **Choose protection level** — 1 (base) through 6 (full VM + anti-debug + AES-256)
-3. **Click Build** — Labyrinx obfuscates every `.py` file, resolves all dependencies automatically, and packages an `.exe`
-4. **Distribute** — single `.exe` with optional built-in license key system and installer builder
-
-{: .text-center}
-*CLI and GUI both included. GUI for interactive use, CLI for CI/CD pipelines.*
+Both wrap the obfuscated source so Cython compiles a trivial 2-line stub — making builds 4-6× faster than compiling raw obfuscated Python. The difference is whether the blob is compressed or encrypted.
 
 ---
 
@@ -94,18 +88,17 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 |---|---------|-----|------------|
 | **Price** | Free | $9/month | $29/month |
 | **Max Level** | 2 | 4 | 6 |
-| **String Encryption** | -- | Yes | Yes |
-| **Module Encryption** | -- | -- | Yes |
-| **Anti-Debug** | -- | -- | Yes |
-| **Code VM** | -- | -- | Yes |
-| **License System** | -- | Yes | Yes |
-| **Installer Builder** | -- | Yes | Yes |
-| **LBRX Native Packager** | -- | Yes | Yes |
-| **Per-EXE Keys** | -- | -- | Yes |
-| **Cache Control** | -- | -- | Yes |
+| **String Encryption (AES)** | — | Yes | Yes |
+| **Module Encryption (gzip)** | — | Yes | — |
+| **Module Encryption (AES-256)** | — | — | Yes |
+| **Code VM** | — | — | Yes |
+| **Anti-Debug** | — | — | Yes |
+| **License System** | — | Yes | Yes |
+| **Per-build Randomized PYDs** | — | — | Yes |
+| **PYD Integrity Hashes** | — | — | Yes |
 
 {: .text-center}
-*All tiers include lifetime access. No per-build fees. No royalties.*
+*All tiers include GUI + CLI. No per-build fees. No royalties.*
 
 ---
 
@@ -113,47 +106,44 @@ Your .py files  -->  Labyrinx (7 layers)  -->  Protected .exe
 
 ### 1. Download (Free)
 
-`Labyrinx.exe` runs in **Freemium** mode out of the box — Level 1–2 obfuscation, standard packager. No registration required.
+`Labyrinx.exe` runs in **Freemium** mode out of the box — name obfuscation + native x64 .pyd output. No registration required.
 
 {: .text-center}
-[**Download Labyrinx (125 MB)**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe)
+[**Download Labyrinx**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe)
 
 {: .small}
-*Includes GUI + CLI + User Manual. Windows 10+, 64-bit. No Python needed.*
+*Includes GUI + CLI + User Manual. Windows 10+, 64-bit. Requires Cython + MSVC for .pyd compilation.*
 
 ### 2. Subscribe to Upgrade
 
-Unlock Pro or Enterprise features instantly. Your license key is delivered automatically after payment.
+Unlock Pro or Enterprise features instantly. License key delivered automatically.
 
 {: .text-center}
-[**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92) — Levels 1–4, LBRX Native, string encryption, license system  
-[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3) — Level 6 VM, anti-debug, module encryption, per-EXE keys, cache control
+[**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92) — Levels 1–4, gzip module encryption, string encryption  
+[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3) — Level 6 VM, AES-256 module encryption, anti-debug, per-build randomized PYDs
 
 ### 3. Activate
 
-Enter your license key in Labyrinx to unlock your tier. The key is valid for the duration of your subscription. Cancel anytime — your key continues working until the end of the billing period.
+Enter your license key in Labyrinx to unlock. Valid for the duration of your subscription. Cancel anytime.
 
 ---
 
 ## FAQ
 
-**Q: Does it work with major Python libraries and frameworks?**
-A: Yes. Labyrinx has been tested against a wide range of real-world libraries — web frameworks, ORMs, data science toolkits, CLI applications, imaging libraries, PDF generators, and cryptographic libraries. The deep import scanner automatically resolves multi-level transitive dependencies.
+**Q: Does the output need Python installed?**
+A: No. The output folder contains a full embedded Python runtime (python313.dll + stdlib). Your customers just double-click.
 
-**Q: Does the protected EXE need Python installed?**
-A: No. The EXE bundles the complete Python runtime — fully standalone.
+**Q: Why folders instead of a single EXE?**
+A: Folders avoid antivirus false positives (no EXE packing), start instantly (no temp extraction), and support incremental updates (swap individual .pyd files).
 
-**Q: Can my EXE be unpacked?**
-A: The LBRX Native packager uses per-EXE encryption, cryptographic integrity verification, and an encrypted file table. Standard extraction tools do not support this format. No local software protection is absolute against a determined attacker with physical access.
-
-**Q: Is my source code recoverable at Level 6?**
-A: At Level 6, the original Python bytecode is entirely replaced with custom VM bytecode. Even if the encrypted payload were somehow accessed, what's inside is a stream of VM opcodes with no mapping back to original Python source.
+**Q: What's the difference between gzip and AES module encryption?**
+A: Gzip (Pro) compresses your obfuscated source into a blob. AES (Enterprise) encrypts it with AES-256-CTR. Both make Cython compilation nearly instant. AES adds cryptographic-grade protection — after .pyd decompilation, all an attacker sees is encrypted ciphertext.
 
 **Q: Can I sell software protected with Labyrinx?**
-A: Yes. The built-in license key system lets you generate and distribute license keys to your customers. An installer builder is also included.
+A: Yes. The built-in license key system (Enterprise) lets you generate and distribute signed license keys to your customers. Optional hardware binding, expiry dates, and tier enforcement.
 
-**Q: What is the minimum EXE size?**
-A: Approximately 29 MB for a minimal application (includes the Python runtime, standard library, and Labyrinx runtime). Larger projects scale primarily with their dependencies.
+**Q: What is the output size?**
+A: Approximately 40 MB for a minimal app, 145 MB for a typical Flask web app, and 200-400 MB for data science applications. The Python runtime and standard library account for the base footprint.
 
 **Q: What Windows versions are supported?**
 A: Windows 10 and later, 64-bit.
@@ -164,13 +154,13 @@ A: Windows 10 and later, 64-bit.
 ## All Downloads
 
 [Browse the release folder](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release) — `Labyrinx.exe` and the User Manual.  
-*HWID Tool and License Creator are built from within `Labyrinx.exe` (Admin panel).*
+*HWID Tool and License Creator are built from within Labyrinx (Admin panel).*
 
 {: .text-center}
 [**Browse All Downloads**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)
 
 {: .small}
-*System requirements: Windows 10+, 64-bit. No Python installation needed.*<br>
+*System requirements: Windows 10+, 64-bit. Cython + MSVC required for .pyd compilation. No Python needed on target machine.*<br>
 *For direct download links and trial licenses, [contact us](#contact).*
 
 ---
