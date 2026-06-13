@@ -58,23 +58,9 @@ On first launch, you may be prompted to accept the EULA and activate your licens
 
 Your protected output will be in `dist/YourApp/` — zip it and ship it.
 
-### 2.3 Command-Line Quick Start
+### 2.3 Next Release: Command-Line Interface
 
-```batch
-REM Pro build (gzip module encryption, fast)
-labyrinx-cli.exe -p ./my_project -l 4 --module-encryption-scheme gzip --exe-name MyApp
-
-REM Enterprise build (AES + VM, maximum protection)
-labyrinx-cli.exe -p ./my_project -l 6 ^
-  --string-encryption --string-scheme aes ^
-  --anti-debug --encrypt-modules --vm-obfuscation ^
-  --exe-name MyApp
-
-REM Full pipeline with license
-labyrinx-cli.exe -p ./my_project -l 6 ^
-  --encrypt-modules --vm-obfuscation ^
-  --with-license secret.key --exe-name MyApp
-```
+A CLI tool (`labyrinx-cli.exe`) for CI/CD automation is planned for the next release. For now, all builds use the GUI launcher.
 
 ---
 
@@ -121,7 +107,7 @@ Labyrinx offers six cumulative protection levels.
 |---|---|---|
 | **Mechanism** | Gzip compression + base64 | AES-256-CTR encryption |
 | **Cython speed** | Instant (2-line stub) | Instant (2-line stub) |
-| **Runtime deps** | None (stdlib only) | 4 native .pyd files |
+| **Runtime PYDs** | 1 (_lx_str for AES strings) | 5 (_lx_aes, _lx_chk, _lx_loader, _lx_str, _lx_vm) |
 | **Decompilation** | Gzip stream visible | Opaque ciphertext |
 | **Build time** | ~75 seconds | ~90 seconds |
 
@@ -163,7 +149,6 @@ The Labyrinx GUI is organized into sections:
 | Preset | Level | String Encryption | Module Encryption | Best For |
 |---|---|---|---|---|
 | Flask Web App | 4 | Off | Yes (gzip/AES) | Web apps |
-| CLI Tool | 3 | Off | Yes (gzip/AES) | Command-line tools |
 | Minimal | 1 | Off | No | Quick tests |
 
 ### 4.3 Build Progress
@@ -178,65 +163,14 @@ The build progress dialog shows:
 
 ## 5. CLI Reference
 
-### 5.1 Core Build Options
+A command-line interface (`labyrinx-cli.exe`) for CI/CD automation and headless builds is planned for the **next release**. It will support:
 
-| Flag | Description | Default |
-|---|---|---|
-| `-p, --project DIR` | Project directory | Required |
-| `-l, --level N` | Obfuscation level (1-6) | 3 |
-| `--exe-name NAME` | Output folder name | Project name |
-| `--string-encryption` | Enable string encryption | Off |
-| `--string-scheme SCHEME` | base64, aes, random | base64 |
-| `--encrypt-modules` | Enable module encryption | Off (auto at L4+) |
-| `--module-encryption-scheme SCHEME` | gzip or aes | aes (tier default) |
-| `--vm-obfuscation` | Enable code VM (L6) | Off |
-| `--anti-debug` | Inject anti-debug checks | Off |
-| `--noconsole` | WINDOWS subsystem launcher | Off |
-| `--hidden-import MODULE` | Add hidden import (repeatable) | — |
-| `--icon PATH` | Path to `.ico` file | — |
-| `--verbose` | Verbose output | Off |
-| `--json` | JSON output for CI/CD | Off |
-| `--restore` | Restore project from backup | — |
+- Project and single-file obfuscation
+- All protection levels and features (string encryption, module encryption, VM, anti-debug)
+- License key generation and management
+- JSON output for pipeline integration
 
-### 5.2 License Commands
-
-```batch
-REM Generate a 16-byte license secret
-labyrinx-cli.exe --license-gen-secret secret.key
-
-REM Create a customer license
-labyrinx-cli.exe --create-license secret.key ^
-  --license-customer "Acme Corp" ^
-  --license-expiry-days 365 ^
-  --license-tier pro
-
-REM Create hardware-bound license
-labyrinx-cli.exe --create-license secret.key ^
-  --license-customer "Acme Corp" ^
-  --license-expiry-days 365 ^
-  --license-tier enterprise ^
-  --license-hwid ABC123
-
-REM Show current machine HWID
-labyrinx-cli.exe --license-show-hwid
-```
-
-### 5.3 Build Examples
-
-```batch
-REM Pro: Flask app with gzip encryption
-labyrinx-cli.exe -p ./my_flask_app -l 4 ^
-  --module-encryption-scheme gzip --exe-name MyFlaskApp
-
-REM Enterprise: maximum protection with VM + license
-labyrinx-cli.exe -p ./src -l 6 ^
-  --string-encryption --string-scheme aes ^
-  --anti-debug --encrypt-modules --vm-obfuscation ^
-  --with-license secret.key --exe-name MyApp
-
-REM Freemium: basic protection
-labyrinx-cli.exe -p ./src -l 2 --exe-name MyApp
-```
+For now, all builds use the GUI launcher. If you need CLI access for a specific workflow, contact support@labyrinx.dev.
 
 ---
 

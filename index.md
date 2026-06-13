@@ -74,7 +74,7 @@ Tested on a real Flask application with 20 modules, 24 compiled files, ~40 Pytho
 |---|---|---|
 | **Mechanism** | Gzip compression + base64 | AES-256-CTR encryption |
 | **Build speed** | Fast (~75s) | Moderate (~90s) |
-| **Runtime deps** | None (stdlib only) | 4 native .pyd files |
+| **Runtime PYDs** | 1 (_lx_str) | 5 (_lx_aes, _lx_chk, _lx_loader, _lx_str, _lx_vm) |
 | **After .pyd decompilation** | Gzip stream visible | Opaque ciphertext |
 | **Price** | $9/month | $29/month |
 
@@ -98,7 +98,7 @@ Both wrap the obfuscated source so Cython compiles a trivial 2-line stub — mak
 | **PYD Integrity Hashes** | — | — | Yes |
 
 {: .text-center}
-*All tiers include GUI + CLI. No per-build fees. No royalties.*
+*All tiers include the GUI launcher. No per-build fees. No royalties.*
 
 ---
 
@@ -112,7 +112,7 @@ Both wrap the obfuscated source so Cython compiles a trivial 2-line stub — mak
 [**Download Labyrinx**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe)
 
 {: .small}
-*Includes GUI + CLI + User Manual. Windows 10+, 64-bit. Requires Cython + MSVC for .pyd compilation.*
+*Includes GUI launcher + User Manual. Windows 10+, 64-bit. Requires Cython + MSVC for .pyd compilation. CLI coming next release.*
 
 ### 2. Subscribe to Upgrade
 
