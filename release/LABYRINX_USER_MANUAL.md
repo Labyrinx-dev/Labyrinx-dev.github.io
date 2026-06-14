@@ -14,7 +14,7 @@ Labyrinx protects Python applications by obfuscating source code, compiling it t
 - **Obfuscates** Python source — renames symbols, encrypts strings, flattens control flow
 - **Compiles** obfuscated code to native `.pyd` files via Cython (x64 machine code)
 - **Assembles** a self-contained folder with embedded Python runtime
-- **Protects** with module encryption (gzip for Pro, AES-256-CTR for Enterprise)
+- **Protects** with module encryption (compression for Pro, AES-256 for Enterprise)
 - **Virtualizes** selected functions into custom VM bytecode (Enterprise)
 - **Licenses** applications with cryptographically signed keys (Enterprise)
 
@@ -29,13 +29,32 @@ Labyrinx produces an **Embedded Python Folder** — not a single EXE. This appro
 
 ### 1.3 System Requirements
 
+**Build Machine** (where you run Labyrinx):
+
+| Component | Requirement | Notes |
+|---|---|---|
+| Operating System | Windows 10 or later (64-bit) | |
+| Python | **Python 3.13** (non-Store) | Recommended: `C:\Python313`. Windows Store Python works but may flash a console window during builds. |
+| Cython + setuptools | `pip install Cython setuptools` | Required for Pro and Enterprise tiers only |
+| C Compiler | **Visual Studio Build Tools 2022** | **MSVC only** — GCC/MinGW does NOT work with Python 3.13 on Windows. [Free download](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022) — select "Desktop development with C++" workload. |
+
+**Target Machine** (your customer):
+
 | Component | Requirement |
 |---|---|
 | Operating System | Windows 10 or later (64-bit) |
-| Cython | `pip install Cython setuptools` |
-| C Compiler | Visual Studio Build Tools or GCC |
-| Target Machine | Windows 10+ (no Python required) |
+| Python | **Not required** — embedded in the output |
 | Disk Space | ~150 MB per build output |
+
+**Tier-specific requirements:**
+
+| Tier | Python | Cython + setuptools | VS Build Tools |
+|---|---|---|---|
+| **Freemium** | Not required | Not required | Not required |
+| **Pro** | Required | Required | Required |
+| **Enterprise** | Required | Required | Required |
+
+> **Without Cython + MSVC:** The build still succeeds, but `.py` files are shipped as obfuscated source instead of native `.pyd` machine code — Freemium-tier protection. Install the dependencies above for full Pro/Enterprise protection.
 
 ---
 
@@ -90,28 +109,26 @@ Labyrinx offers six cumulative protection levels.
 
 ### Level 5 — Maximum
 - Everything in Level 4
-- Module encryption (gzip or AES-256-CTR)
+- Module encryption (compression or AES-256)
 - Anti-debug protection (6 detection techniques)
 - **Best for:** Customer-delivered applications
 
 ### Level 6 — Maximum + VM
 - Everything in Level 5
-- Code Virtualization (49-opcode stack VM)
+- Code Virtualization — custom stack VM (Enterprise)
 - Per-build randomized VM opcodes
 - Opaque predicate injection in bytecode
 - **Best for:** Maximum protection against determined reverse engineering
 
 ### Module Encryption Comparison
 
-| | Pro (gzip) | Enterprise (AES) |
+| | Pro | Enterprise |
 |---|---|---|
-| **Mechanism** | Gzip compression + base64 | AES-256-CTR encryption |
-| **Cython speed** | Instant (2-line stub) | Instant (2-line stub) |
-| **Runtime PYDs** | 1 | 5 |
-| **Decompilation** | Gzip stream visible | Opaque ciphertext |
+| **Mechanism** | Compression | AES-256 encryption |
+| **After .pyd decompilation** | Compressed data visible | Encrypted ciphertext |
 | **Build time** | ~75 seconds | ~90 seconds |
 
-Both schemes wrap the obfuscated source into a blob so Cython only compiles a trivial decrypt stub — making builds 4-6× faster than compiling the full obfuscated Python directly.
+Both schemes protect your source by wrapping it before compilation, keeping build times fast even for large projects.
 
 ---
 
@@ -141,7 +158,7 @@ The Labyrinx GUI is organized into sections:
 
 **License Section** (Enterprise only)
 - Enable License — embed verification in the build
-- Secret File — path to your 16-byte license secret
+- Secret File — path to your license secret
 - Create License — generate signed customer keys
 
 ### 4.2 Configuration Presets
@@ -180,18 +197,14 @@ Labyrinx includes a built-in license key system (Enterprise tier) for per-custom
 
 ### 6.1 How It Works
 
-1. **Generate a secret** — 16-byte random key (keep this safe, never distribute)
+1. **Generate a secret** — a random encryption key (keep this safe, never distribute)
 2. **Build with license** — embed verification into the app using the secret
 3. **Create customer keys** — generate signed keys for each customer
 4. **Customer activates** — places `license.txt` next to the app, launches, and activates
 
 ### 6.2 License Format
 
-```
-base64(customer_name|expiry_timestamp|tier[|HWID]).hex-lowercase(HMAC-SHA256[:16])
-```
-
-Cryptographically signed via HMAC-SHA256 using Windows BCrypt API.
+License keys are cryptographically signed tokens containing the customer identity, expiry, tier, and optional hardware binding. Keys are verified at runtime using Windows native cryptography — no Python-level crypto is exposed to debuggers.
 
 ### 6.3 Tiers
 
@@ -211,7 +224,7 @@ Expired licenses gracefully downgrade to Freemium rather than hard-exiting.
 
 ### 6.5 Hardware Binding (Optional)
 
-Bind licenses to specific machines using disk volume serial numbers. Customers obtain their HWID by running the included `get_hwid.exe` tool.
+Bind licenses to specific machines using hardware identifiers. Customers obtain their HWID by running the included `get_hwid.exe` tool.
 
 ---
 
@@ -221,15 +234,14 @@ Bind licenses to specific machines using disk volume serial numbers. Customers o
 
 ```
 dist/MyApp/
-├── MyApp.exe              ← click-to-run (~30 KB C launcher)
+├── MyApp.exe              ← click-to-run launcher
 ├── MyApp.bat              ← fallback batch launcher
 ├── python313.dll          ← embedded Python interpreter
 ├── python313.zip          ← compressed standard library
 ├── python313._pth         ← path configuration
 ├── vcruntime140*.dll      ← Visual C++ runtime
-├── .__launcher__.py       ← entry point script
 ├── *.pyd                  ← your application code (native x64)
-├── _lx_*.pyd              ← Labyrinx runtime (encryption, VM, integrity)
+├── Labyrinx runtime        ← protection modules (encryption, VM, integrity)
 └── Lib/site-packages/     ← third-party dependencies
 ```
 
@@ -258,50 +270,36 @@ Replace individual `.pyd` files to update your app. No need to resend the full 1
 
 ## 8. Anti-Debug & Tamper Protection
 
-### 8.1 Anti-Debug Techniques (Enterprise)
+### 8.1 Anti-Debug Protection (Enterprise)
 
-Six detection methods run at module import time:
+Multiple detection techniques guard against debugging and reverse engineering at runtime:
 
-| # | Technique | Method |
-|---|---|---|
-| 1 | Python debugger | `sys.gettrace()` |
-| 2 | User-mode debugger | `kernel32.IsDebuggerPresent()` |
-| 3 | Kernel debugger | `NtQueryInformationProcess` → DebugPort |
-| 4 | Debug heap | PEB.NtGlobalFlag via `ReadProcessMemory` |
-| 5 | Single-stepping | `QueryPerformanceCounter` timing check |
-| 6 | Hardware breakpoints | `GetThreadContext` → DR0-DR3 |
+- Python-level debugger detection
+- User-mode and kernel-mode debugger detection
+- Debug heap and breakpoint detection
+- Timing-based single-step analysis detection
 
-Detection triggers `os._exit(0)` — hard exit with no exception handlers. All checks are wrapped in `try/except` and silently pass on non-Windows platforms.
+Detection triggers immediate application termination. All checks operate at the native code level and produce no exception handlers or diagnostic output.
 
-### 8.2 PYD Integrity Verification (Enterprise)
+### 8.2 File Integrity Verification (Enterprise)
 
-Every `.pyd` file in the output is hashed. A `.__pyd_hashes__.json` manifest is generated at build time. At runtime, the integrity module verifies hashes before loading — tampered or replaced `.pyd` files are detected and blocked.
+Every compiled file in the output is cryptographically hashed at build time. At startup, all hashes are verified before any application code loads. Tampered or replaced files are detected and blocked before execution begins.
 
 ---
 
 ## 9. Code Virtualization (Level 6 — Enterprise)
 
-Selected functions are compiled to custom bytecode for a 49-opcode stack VM.
+Selected functions are compiled to custom bytecode for a private stack-based VM.
 
 ### 9.1 VM Architecture
 
-- **Stack-based** — all operations push/pop from a Python list stack
-- **Register-indirect locals** — fast variable access via indexed array
+- **Stack-based execution** — operations push and pop from a virtual stack
 - **Per-build randomized opcodes** — no two builds use the same mapping
-- **XOR-encrypted bytecode** — stored as base85 blobs
-- **Dead code injection** — junk bytecode via opaque predicates
+- **Encrypted bytecode** — stored in an opaque format on disk
+- **Dead code injection** — junk instructions via opaque predicates
+- **Covers standard Python** — control flow, exceptions, functions, generators, context managers, and comprehensions
 
-### 9.2 Supported Constructs
-
-| Category | Supported |
-|---|---|
-| Control flow | if/elif/else, while, for, break, continue |
-| Exceptions | try/except/finally, raise |
-| Functions | def, return, decorators, lambdas |
-| Generators | yield, yield from, generator expressions |
-| Context managers | with statements |
-| Expressions | walrus, starred, slice, chained comparisons |
-| Comprehensions | List, Set, Dict |
+> The VM architecture and instruction set are proprietary and intentionally undocumented.
 
 ---
 
@@ -326,10 +324,34 @@ Environment: Windows 10 x64, Python 3.13, Cython + MSVC. All builds produce full
 - Run `python -m py_compile your_file.py` first
 - Try Level 1 to isolate issues
 
-### Cython Not Found
-- Install: `pip install Cython setuptools`
-- Install Visual Studio Build Tools (MSVC) or GCC
-- Ensure Python is on PATH or install at `C:\Python313`
+### Cython Not Found / No .pyd Compilation
+
+The build log shows: `WARNING: 0 modules compiled to .pyd — no native protection!`
+
+**Install the required tools:**
+
+1. **Install Python 3.13** (if not already installed)
+   - Download from [python.org](https://www.python.org/downloads/)
+   - Install to `C:\Python313` (recommended)
+   - **Avoid Windows Store Python** — it may flash console windows during builds
+
+2. **Install Cython + setuptools:**
+   ```
+   pip install Cython setuptools
+   ```
+
+3. **Install Visual Studio Build Tools 2022:**
+   - Download: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
+   - Run the installer, select the **"Desktop development with C++"** workload
+   - This installs MSVC v143 compiler + Windows SDK (~3 GB)
+   - The Build Tools are **free** — no Visual Studio license required
+
+4. **Verify everything works:**
+   ```
+   python -c "import Cython, setuptools; print('OK')"
+   ```
+
+> **GCC/MinGW does NOT work** — Python 3.13 on Windows requires MSVC for `.pyd` compilation.
 
 ### EXE Fails to Start
 - Try the `.bat` file as fallback (more diagnostic output)
