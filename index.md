@@ -146,6 +146,9 @@ A: Approximately 40 MB for a minimal app, 145 MB for a typical Flask web app, an
 **Q: What Windows versions are supported?**
 A: Windows 10 and later, 64-bit.
 
+**Q: Does the dependency scanner catch everything?**
+A: Labyrinx performs deep import tracing to automatically discover required packages. While thorough, it may not detect 100% of dependencies — particularly packages loaded dynamically at runtime (e.g., `importlib.import_module()`), plugin-style entry points, or non-standard packaging layouts. Always test your built output thoroughly. You can add missed packages via the Hidden Imports field in the GUI.
+
 ---
 
 {: .text-center}
