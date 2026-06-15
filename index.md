@@ -75,27 +75,12 @@ MyApp/
 
 ## Get Started
 
-### 1. Download (Free)
+### 1. Availability
 
-`Labyrinx.exe` runs in **Freemium** mode out of the box — name obfuscation + native x64 .pyd output. No registration required.
-
-{: .text-center}
-[**Download Labyrinx**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe)
-
-{: .small}
-*Includes GUI launcher + User Manual. Windows 10+, 64-bit. CLI coming next release.*
-
-### 2. Subscribe to Upgrade
-
-Unlock Pro or Enterprise features instantly. License key delivered automatically.
+Labyrinx is currently in active development and **not yet available** for public download. Early access coming soon.
 
 {: .text-center}
-[**Subscribe — Pro ($9/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92) — Levels 1–4, module encryption, string encryption  
-[**Subscribe — Enterprise ($29/mo)**](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3) — Level 6 VM, AES-256 module encryption, anti-debug, per-build randomized outputs
-
-### 3. Activate
-
-Enter your license key in Labyrinx to unlock. Valid for the duration of your subscription. Cancel anytime.
+*Sign up for updates: [labyrinx@yahoo.com](mailto:labyrinx@yahoo.com)*
 
 ---
 
@@ -152,17 +137,7 @@ A: Labyrinx performs deep import tracing to automatically discover required pack
 ---
 
 {: .text-center}
-## All Downloads
-
-[Browse the release folder](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release) — `Labyrinx.exe` and the User Manual.  
-*HWID Tool and License Creator are built from within Labyrinx (Admin panel).*
-
-{: .text-center}
-[**Browse All Downloads**](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/tree/master/release)
-
-{: .small}
-*Windows 10+, 64-bit. See [System Requirements](#system-requirements) above for full details.*<br>
-*For direct download links and trial licenses, [contact us](#contact).*
+Labyrinx is in active development. Release coming soon. For inquiries, [contact us](#contact).
 
 ---
 
