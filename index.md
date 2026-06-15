@@ -16,12 +16,12 @@ Labyrinx obfuscates your Python source code, compiles it to native x64 machine c
 | Layer | Protection | Tier |
 |-------|-----------|------|
 | 1. Name Obfuscation | Variables, functions, and classes renamed to random tokens | Freemium |
-| 2. Control Flow Flattening | Function logic restructured into switch-case state machines | Pro |
-| 3. String Encryption | Every string literal AES-encrypted — invisible to `strings.exe` | Pro |
-| 4. Module Encryption (compression) | Entire source compressed into a protected blob | Pro |
+| 2. Control Flow Flattening | Function logic restructured into non-linear execution paths | Pro |
+| 3. String Encryption | Every string literal encrypted — invisible to `strings.exe` | Pro |
+| 4. Module Encryption (compression) | Entire source protected in a wrapped blob | Pro |
 | 5. Module Encryption (AES-256) | Entire source AES-256 encrypted — decompilation yields opaque ciphertext | Enterprise |
-| 6. Anti-Debug | 6 detection techniques covering user-mode and kernel-mode debuggers | Enterprise |
-| 7. Code Virtualization | Custom stack VM with per-build randomized instruction set | Enterprise |
+| 6. Anti-Debug | Multiple detection techniques across multiple layers | Enterprise |
+| 7. Code Virtualization | Custom VM with per-build randomized instruction set | Enterprise |
 
 {: .text-center}
 *All tiers produce native x64 .pyd files via Cython. Pro adds module encryption. Enterprise adds AES-256 + VM.*
@@ -50,34 +50,6 @@ MyApp/
 
 {: .text-center}
 *Zip the folder and ship it. Customers extract and double-click.*
-
----
-
-## Real Build Performance
-
-Tested on a real Flask application with 20 modules, 24 compiled files, ~40 Python packages:
-
-| Tier | Level | Build Time | Output Size |
-|------|-------|-----------|-------------|
-| **Freemium** | 2 | ~40 seconds | ~151 MB |
-| **Pro** | 4 | ~75 seconds | ~140 MB |
-| **Enterprise** | 6 | ~90 seconds | ~153 MB |
-
-{: .small}
-*Windows 10 x64, Python 3.13, Cython + MSVC. All builds produce fully functional applications.*
-
----
-
-## Module Encryption Comparison
-
-| | Pro | Enterprise |
-|---|---|---|
-| **Mechanism** | Compression | AES-256 encryption |
-| **Build speed** | Fast (~75s) | Moderate (~90s) |
-| **After .pyd decompilation** | Compressed data visible | Encrypted ciphertext |
-| **Price** | $9/month | $29/month |
-
-Both wrap the obfuscated source before compilation, keeping builds fast even for large projects. The difference is whether the data is compressed or encrypted.
 
 ---
 
@@ -164,8 +136,6 @@ A: No. The output folder contains a full embedded Python runtime (python313.dll 
 **Q: Why folders instead of a single EXE?**
 A: Folders avoid antivirus false positives (no EXE packing), start instantly (no temp extraction), and support incremental updates (swap individual .pyd files).
 
-**Q: What's the difference between Pro and Enterprise module encryption?**
-A: Pro uses compression to protect your source. Enterprise adds AES-256 encryption for cryptographic-grade protection — even after decompilation, the original source remains inaccessible.
 
 **Q: Can I sell software protected with Labyrinx?**
 A: Yes. The built-in license key system (Enterprise) lets you generate and distribute signed license keys to your customers. Optional hardware binding, expiry dates, and tier enforcement.
