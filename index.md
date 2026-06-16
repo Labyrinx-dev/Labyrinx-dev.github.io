@@ -55,7 +55,7 @@ MyApp/
 
 ## Pricing
 
-<table align="center">
+<table style="margin: 0 auto;">
   <thead><tr><th></th><th>Freemium</th><th>Pro</th><th>Enterprise</th></tr></thead>
   <tbody>
     <tr><td><strong>Price</strong></td><td>Free</td><td>$9/month</td><td>$29/month</td></tr>
@@ -105,7 +105,7 @@ Unlock higher protection levels with a monthly subscription. License key deliver
   </a>
 </p>
 
-<table align="center">
+<table style="margin: 0 auto;">
   <thead><tr><th></th><th>Pro</th><th>Enterprise</th></tr></thead>
   <tbody>
     <tr><td><strong>Price</strong></td><td>$9/month</td><td>$29/month</td></tr>
