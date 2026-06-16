@@ -170,6 +170,9 @@ A: No. The output folder contains a full embedded Python runtime (python313.dll 
 A: Folders avoid antivirus false positives (no EXE packing), start instantly (no temp extraction), and support incremental updates (swap individual .pyd files).
 
 
+**Q: Builds are slow — any way to speed them up?**
+A: Windows Defender real-time scanning inspects every `.c` and `.pyd` file as Cython writes them, which can double compile time. **Temporarily exclude your project folder** in Windows Security → Virus & threat protection → Manage settings → Exclusions → Add your project directory. Just remember to remove the exclusion after the build.
+
 **Q: Can I sell software protected with Labyrinx?**
 A: Yes. The built-in license key system (Enterprise) lets you generate and distribute signed license keys to your customers. Optional hardware binding, expiry dates, and tier enforcement.
 
