@@ -83,19 +83,9 @@ Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no li
 
 <p align="center">
   <a href="https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx_setup.exe"
-     onclick="fetch('https://api.countapi.xyz/hit/labyrinx/download'); return true;"
      style="display:inline-block;background:#1e3a5f;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;">
     📥 Download Labyrinx Setup
   </a>
-</p>
-
-<p align="center" id="download-count" style="font-size:13px;color:#64748b;margin-top:4px;">
-  <script>
-    fetch('https://api.countapi.xyz/get/labyrinx/download')
-      .then(r => r.json()).then(d => {
-        if (d.value) document.getElementById('download-count').textContent = d.value + ' downloads';
-      }).catch(() => {});
-  </script>
 </p>
 
 <p align="center"><em>~33 MB &middot; Windows 10+ 64-bit &middot; No Python install needed</em></p>
