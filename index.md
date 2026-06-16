@@ -75,12 +75,33 @@ MyApp/
 
 ## Get Started
 
-### 1. Availability
+### 1. Download (Free)
 
-Labyrinx is currently in active development and **not yet available** for public download. Early access coming soon.
+Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no license required.
 
 {: .text-center}
-*Sign up for updates: [labyrinx@yahoo.com](mailto:labyrinx@yahoo.com)*
+[📥 Download Labyrinx.exe](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe){: .btn}
+
+{: .text-center .small}
+*~125 MB. Windows 10+ 64-bit. No Python install needed.*
+
+### 2. Upgrade to Pro or Enterprise
+
+Unlock higher protection levels with a monthly subscription. License key delivered automatically after purchase.
+
+{: .text-center}
+| | Pro | Enterprise |
+|---|-----|------------|
+| **Price** | $9/month | $29/month |
+| **Protection** | Levels 1–4 | Levels 1–7 |
+| | [Subscribe — Pro](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92){: .btn} | [Subscribe — Enterprise](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3){: .btn} |
+
+{: .text-center .small}
+*Subscription auto-renews monthly. Cancel anytime. License key emailed automatically after purchase.*
+
+### 3. Activate
+
+Open Labyrinx.exe, click the license button in the bottom bar, paste your license key. Pro/Enterprise features unlock instantly.
 
 ---
 
@@ -137,7 +158,7 @@ A: Labyrinx performs deep import tracing to automatically discover required pack
 ---
 
 {: .text-center}
-Labyrinx is in active development. Release coming soon. For inquiries, [contact us](#contact).
+Labyrinx is available now. [Download for free](#get-started) or [subscribe](#get-started) to unlock Enterprise protection.
 
 ---
 
