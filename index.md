@@ -55,6 +55,8 @@ MyApp/
 
 ## Pricing
 
+<div align="center">
+
 | | Freemium | Pro | Enterprise |
 |---|---------|-----|------------|
 | **Price** | Free | $9/month | $29/month |
@@ -68,8 +70,9 @@ MyApp/
 | **Per-build Randomized Outputs** | — | — | Yes |
 | **PYD Integrity Hashes** | — | — | Yes |
 
-{: .text-center}
 *All tiers include the GUI launcher. No per-build fees. No royalties.*
+
+</div>
 
 ---
 
