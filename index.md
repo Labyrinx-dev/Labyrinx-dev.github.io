@@ -90,6 +90,12 @@ Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no li
 
 <p align="center"><em>~33 MB &middot; Windows 10+ 64-bit &middot; No Python install needed</em></p>
 
+<p align="center" style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:12px 16px;max-width:560px;margin:12px auto;font-size:14px;">
+⚠️ <strong>Windows may show a SmartScreen warning</strong> — this is normal for new software.<br>
+Click <strong>"More info"</strong> → <strong>"Run anyway"</strong> to install.<br>
+<em>The warning goes away after enough users trust the app.</em>
+</p>
+
 ### 2. Upgrade to Pro or Enterprise
 
 Unlock higher protection levels with a monthly subscription. License key delivered automatically after purchase.
