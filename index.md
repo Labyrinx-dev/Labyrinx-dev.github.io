@@ -79,25 +79,45 @@ MyApp/
 
 Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no license required.
 
-{: .text-center}
-[📥 Download Labyrinx Setup](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx_setup.exe){: .btn}
+<p align="center">
+  <a href="https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx_setup.exe"
+     style="display:inline-block;background:#1e3a5f;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;">
+    📥 Download Labyrinx Setup
+  </a>
+</p>
 
-{: .text-center .small}
-*~33 MB. Windows 10+ 64-bit. No Python install needed.*
+<p align="center"><em>~33 MB &middot; Windows 10+ 64-bit &middot; No Python install needed</em></p>
 
 ### 2. Upgrade to Pro or Enterprise
 
 Unlock higher protection levels with a monthly subscription. License key delivered automatically after purchase.
 
-{: .text-center}
-| | Pro | Enterprise |
+<p align="center">
+  <a href="https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92"
+     style="display:inline-block;background:#3b82f6;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;margin:0 8px;">
+    Subscribe — Pro &middot; $9/mo
+  </a>
+  <a href="https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3"
+     style="display:inline-block;background:#7c3aed;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;margin:0 8px;">
+    Subscribe — Enterprise &middot; $29/mo
+  </a>
+</p>
+
+<div align="center">
+
+|  | Pro | Enterprise |
 |---|-----|------------|
 | **Price** | $9/month | $29/month |
 | **Protection** | Levels 1–4 | Levels 1–7 |
-| | [Subscribe — Pro](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92){: .btn} | [Subscribe — Enterprise](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3){: .btn} |
+| **String Encryption** | ✅ | ✅ |
+| **Module Encryption** | ✅ | ✅ (AES-256) |
+| **Code VM** | — | ✅ |
+| **Anti-Debug** | — | ✅ |
+| **License System** | ✅ | ✅ |
 
-{: .text-center .small}
-*Subscription auto-renews monthly. Cancel anytime. License key emailed automatically after purchase.*
+</div>
+
+<p align="center"><em>Subscription auto-renews monthly. Cancel anytime. License key emailed automatically after purchase.</em></p>
 
 ### 3. Activate
 
