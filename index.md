@@ -55,24 +55,23 @@ MyApp/
 
 ## Pricing
 
-<div align="center">
+<table align="center">
+  <thead><tr><th></th><th>Freemium</th><th>Pro</th><th>Enterprise</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Price</strong></td><td>Free</td><td>$9/month</td><td>$29/month</td></tr>
+    <tr><td><strong>Max Level</strong></td><td>2</td><td>4</td><td>7</td></tr>
+    <tr><td><strong>String Encryption (AES)</strong></td><td>—</td><td>✅</td><td>✅</td></tr>
+    <tr><td><strong>Module Encryption</strong></td><td>—</td><td>✅</td><td>—</td></tr>
+    <tr><td><strong>Module Encryption (AES-256)</strong></td><td>—</td><td>—</td><td>✅</td></tr>
+    <tr><td><strong>Code VM</strong></td><td>—</td><td>—</td><td>✅</td></tr>
+    <tr><td><strong>Anti-Debug</strong></td><td>—</td><td>—</td><td>✅</td></tr>
+    <tr><td><strong>License System</strong></td><td>—</td><td>✅</td><td>✅</td></tr>
+    <tr><td><strong>Per-build Randomized Outputs</strong></td><td>—</td><td>—</td><td>✅</td></tr>
+    <tr><td><strong>PYD Integrity Hashes</strong></td><td>—</td><td>—</td><td>✅</td></tr>
+  </tbody>
+</table>
 
-| | Freemium | Pro | Enterprise |
-|---|---------|-----|------------|
-| **Price** | Free | $9/month | $29/month |
-| **Max Level** | 2 | 4 | 6 |
-| **String Encryption (AES)** | — | Yes | Yes |
-| **Module Encryption** | — | Yes | — |
-| **Module Encryption (AES-256)** | — | — | Yes |
-| **Code VM** | — | — | Yes |
-| **Anti-Debug** | — | — | Yes |
-| **License System** | — | Yes | Yes |
-| **Per-build Randomized Outputs** | — | — | Yes |
-| **PYD Integrity Hashes** | — | — | Yes |
-
-*All tiers include the GUI launcher. No per-build fees. No royalties.*
-
-</div>
+<p align="center"><em>All tiers include the GUI launcher. No per-build fees. No royalties.</em></p>
 
 ---
 
@@ -106,19 +105,18 @@ Unlock higher protection levels with a monthly subscription. License key deliver
   </a>
 </p>
 
-<div align="center">
-
-|  | Pro | Enterprise |
-|---|-----|------------|
-| **Price** | $9/month | $29/month |
-| **Protection** | Levels 1–4 | Levels 1–7 |
-| **String Encryption** | ✅ | ✅ |
-| **Module Encryption** | ✅ | ✅ (AES-256) |
-| **Code VM** | — | ✅ |
-| **Anti-Debug** | — | ✅ |
-| **License System** | ✅ | ✅ |
-
-</div>
+<table align="center">
+  <thead><tr><th></th><th>Pro</th><th>Enterprise</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Price</strong></td><td>$9/month</td><td>$29/month</td></tr>
+    <tr><td><strong>Protection</strong></td><td>Levels 1–4</td><td>Levels 1–7</td></tr>
+    <tr><td><strong>String Encryption</strong></td><td>✅</td><td>✅</td></tr>
+    <tr><td><strong>Module Encryption</strong></td><td>✅</td><td>✅ (AES-256)</td></tr>
+    <tr><td><strong>Code VM</strong></td><td>—</td><td>✅</td></tr>
+    <tr><td><strong>Anti-Debug</strong></td><td>—</td><td>✅</td></tr>
+    <tr><td><strong>License System</strong></td><td>✅</td><td>✅</td></tr>
+  </tbody>
+</table>
 
 <p align="center"><em>Subscription auto-renews monthly. Cancel anytime. License key emailed automatically after purchase.</em></p>
 
