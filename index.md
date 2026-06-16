@@ -80,10 +80,10 @@ MyApp/
 Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no license required.
 
 {: .text-center}
-[📥 Download Labyrinx.exe](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx.exe){: .btn}
+[📥 Download Labyrinx Setup](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx_setup.exe){: .btn}
 
 {: .text-center .small}
-*~125 MB. Windows 10+ 64-bit. No Python install needed.*
+*~33 MB. Windows 10+ 64-bit. No Python install needed.*
 
 ### 2. Upgrade to Pro or Enterprise
 
