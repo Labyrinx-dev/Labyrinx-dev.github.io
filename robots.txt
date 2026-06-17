@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /release/
+
+Sitemap: https://labyrinx-dev.github.io/sitemap.xml

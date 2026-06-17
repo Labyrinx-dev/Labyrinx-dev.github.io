@@ -209,3 +209,48 @@ For trial requests, licensing inquiries, and enterprise pricing:
 
 {: .text-center .small}
 (c) 2026 Labyrinx. All rights reserved.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Labyrinx",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "Python code obfuscation and protection tool. Compile to native x64 machine code via Cython with 7 layers of protection including name obfuscation, string encryption, control flow flattening, module encryption, anti-debug, and code virtualization.",
+  "url": "https://labyrinx-dev.github.io/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Freemium",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "9.00",
+      "priceCurrency": "USD",
+      "description": "Monthly subscription — protection levels 1-4, string encryption, module encryption, license system"
+    },
+    {
+      "@type": "Offer",
+      "name": "Enterprise",
+      "price": "29.00",
+      "priceCurrency": "USD",
+      "description": "Monthly subscription — protection levels 1-7, AES-256 module encryption, code VM, anti-debug, PYD integrity hashes"
+    }
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Labyrinx",
+    "email": "labyrinx@yahoo.com",
+    "url": "https://github.com/Labyrinx-dev"
+  },
+  "browserRequirements": "Windows 10 or later, 64-bit",
+  "downloadUrl": "https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_setup.exe",
+  "fileSize": "33 MB",
+  "softwareVersion": "1.0",
+  "datePublished": "2026-06-16"
+}
+</script>
