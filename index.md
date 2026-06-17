@@ -82,7 +82,8 @@ MyApp/
 Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no license required.
 
 <p align="center">
-  <a href="https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/raw/master/release/Labyrinx_setup.exe"
+  <a href="https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_setup.exe"
+     onclick="gtag('event', 'download', { event_category: 'engagement', event_label: 'Labyrinx Setup', value: 1 });"
      style="display:inline-block;background:#1e3a5f;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;">
     📥 Download Labyrinx Setup
   </a>
