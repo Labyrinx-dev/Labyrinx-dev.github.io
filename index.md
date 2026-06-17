@@ -82,19 +82,19 @@ MyApp/
 Labyrinx runs in **Freemium mode** at no cost — protection levels 1–2, no license required.
 
 <p align="center">
-  <a href="https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_setup.exe"
-     onclick="gtag('event', 'download', { event_category: 'engagement', event_label: 'Labyrinx Setup', value: 1 });"
+  <a href="https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_setup.zip"
+     onclick="gtag('event', 'download', { event_category: 'engagement', event_label: 'Labyrinx Setup Zip', value: 1 });"
      style="display:inline-block;background:#1e3a5f;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;">
-    📥 Download Labyrinx Setup
+    📥 Download Labyrinx (ZIP)
   </a>
 </p>
 
-<p align="center"><em>~33 MB &middot; Windows 10+ 64-bit &middot; No Python install needed</em></p>
+<p align="center"><em>~34 MB ZIP &middot; Extract and run Labyrinx_setup.exe &middot; Windows 10+ 64-bit &middot; No Python install needed</em></p>
 
 <p align="center" style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:12px 16px;max-width:560px;margin:12px auto;font-size:14px;">
-⚠️ <strong>Windows may show a SmartScreen warning</strong> — this is normal for new software.<br>
-Click <strong>"More info"</strong> → <strong>"Run anyway"</strong> to install.<br>
-<em>The warning goes away after enough users trust the app.</em>
+📦 <strong>After downloading, extract the ZIP</strong>, then run <code>Labyrinx_setup.exe</code> inside.<br>
+⚠️ Windows may show a SmartScreen warning — click <strong>"More info"</strong> → <strong>"Run anyway"</strong>.<br>
+<em>This is normal for new software. The warning goes away after enough users trust the app.</em>
 </p>
 
 ### 2. Upgrade to Pro or Enterprise
