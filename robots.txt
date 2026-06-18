@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /release/Labyrinx_setup.exe
-Disallow: /release/Labyrinx_setup.zip
+Disallow: /release/
 
 Sitemap: https://labyrinx-dev.github.io/sitemap.xml
