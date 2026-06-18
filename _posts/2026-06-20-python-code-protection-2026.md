@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Python Code Protection in 2026: What Actually Works"
-seo_description: "A 2026 analysis of Python code protection that actually works — obfuscation, Cython compilation, AES-256 encryption, custom VM bytecode, and anti-debug. What stops a determined attacker and what doesn't."
+seo_description: "A 2026 analysis of Python code protection that actually works — obfuscation, native code compilation, AES-256 encryption, custom VM bytecode, and anti-debug. What stops a determined attacker and what doesn't."
 date: 2026-06-20
 ---
 
@@ -18,7 +18,7 @@ Five years ago, compiling Python to a `.pyd` was enough. Today, the tooling has 
 
 | Tool | What It Does | Time to Recover Source |
 |------|-------------|----------------------|
-| **pyinstxtractor** | Extracts PyInstaller bundles | 30 seconds |
+| **EXE extractors** | Extracts bundled EXE packages | 30 seconds |
 | **pycdc** | Decompiles `.pyc` bytecode | 1 minute |
 | **uncompyle6** | Alternative decompiler | 1 minute |
 | **Frida** | Dynamic instrumentation | Setup: 10 minutes |
@@ -60,7 +60,7 @@ Before choosing tools, define who you're protecting against:
 
 ## What Actually Works in 2026
 
-### Works: Native Compilation (Cython / Nuitka)
+### Works: Native Code Compilation
 
 Converting Python to native x64 code eliminates bytecode decompilation entirely. `pycdc` and `uncompyle6` are useless against a `.pyd` file. The attacker must work at the assembly level.
 
@@ -90,7 +90,7 @@ Renaming variables and stripping comments is better than nothing, but decompiler
 
 ### Doesn't Work: "Compile to EXE" Without Obfuscation
 
-PyInstaller's `--onefile` produces a single EXE that unpacks to a temp folder. The `.pyc` files inside are extractable with `pyinstxtractor` — a 5-minute YouTube tutorial teaches anyone how. If your EXE is just PyInstaller with no additional protection, your source is exposed.
+Single-file EXE bundlers produce an EXE that unpacks to a temp folder on launch. The `.pyc` files inside are extractable with widely-available tools — a 5-minute YouTube tutorial teaches anyone how. If your EXE is just a bundle with no additional protection, your source is exposed.
 
 ---
 

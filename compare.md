@@ -1,64 +1,73 @@
 ---
 layout: default
-title: Python Code Protection Tools Compared — Labyrinx vs PyArmor vs Cython vs Nuitka
-seo_description: Compare Python obfuscation tools side by side. Labyrinx vs PyArmor vs Cython vs Nuitka — protection layers, output format, pricing, platform support, AV-friendliness. Which Python code protection tool is right for you?
+title: Python Code Protection Approaches Compared — Which Method Is Right for You?
+seo_description: Compare Python code protection approaches side by side. Folder-based embedded distribution vs single-file EXE packing vs bytecode obfuscation vs transpiler compilation — protection layers, output format, pricing, and AV-friendliness.
 ---
 
-# Python Code Protection Tools Compared (2026)
+# Python Code Protection Approaches Compared
 
 {: .text-center}
-*An honest, technical comparison of the most popular tools for protecting Python source code.*
+*An honest comparison of different approaches to protecting Python source code — what each method actually does, and when it's the right choice.*
 
 ---
 
-## The Contenders
+## The Four Approaches to Python Code Protection
 
-There are four main approaches to protecting Python code from reverse engineering. Each tool takes a different path:
+There are four fundamentally different ways to protect Python code from reverse engineering:
 
-| Tool | Approach | Output | Pricing |
-|------|----------|--------|---------|
-| **Labyrinx** | Cython compilation + 7-layer obfuscation | Embedded Python folder (no EXE packing) | Freemium / $9-$29/mo |
-| **PyArmor** | Bytecode-level encryption + obfuscation | Encrypted .py files (bundled with PyInstaller) | Freemium / $49-$199 one-time |
-| **Cython** | Python → C → native .pyd/.so | Native shared libraries | Free (open source) |
-| **Nuitka** | Python → C → native executable | Standalone EXE or .pyd modules | Free (Apache 2.0) |
+| Approach | How It Works | Output | Typical Cost |
+|----------|-------------|--------|--------------|
+| **Bytecode Obfuscation** | Encrypts/obfuscates Python bytecode, decrypts at runtime | Encrypted `.py` files (often bundled into single EXE) | Free — $199 one-time |
+| **C-to-Native Compilation** | Translates Python to C, compiles to native shared libraries | `.pyd`/`.so` native libraries | Free (open source) |
+| **Transpiler-to-EXE** | Translates entire Python app to C, compiles to standalone EXE | Folder with EXE + DLLs | Free (open source) |
+| **Multi-Layer Obfuscation + Embedding** | Obfuscates → compiles to native → encrypts → embeds runtime | Self-contained folder with embedded Python (Labyrinx approach) | Freemium / $9-$29/mo |
 
 ---
 
 ## Protection Comparison
 
-### Layer-by-Layer Breakdown
+### What Each Approach Actually Protects
 
-| Protection Layer | Labyrinx | PyArmor | Cython | Nuitka |
-|-----------------|----------|---------|--------|--------|
-| **Name Obfuscation** | ✅ (random tokens) | ✅ (configurable) | ❌ (keeps names) | ❌ (keeps names) |
-| **String Encryption** | ✅ (AES-256 at rest) | ✅ (runtime encrypted) | ❌ (plain strings in binary) | ❌ (plain strings in binary) |
-| **Control Flow Flattening** | ✅ (switch-case dispatch) | ✅ (basic) | ❌ | ❌ |
-| **Module Encryption** | ✅ (AES-256 + compression) | ✅ (bytecode encryption) | ❌ | ❌ |
-| **Native Compilation** | ✅ (Cython → x64 .pyd) | ❌ (bytecode only) | ✅ (C → .pyd) | ✅ (C → EXE) |
-| **Code Virtualization** | ✅ (custom VM, per-build randomized) | ❌ | ❌ | ❌ |
-| **Anti-Debug** | ✅ (multi-point detection) | ❌ | ❌ | ❌ |
-| **License Key System** | ✅ (HMAC-signed, HWID-bound) | ✅ (PyArmor license) | ❌ | ❌ |
+| Protection Layer | Bytecode Obfuscation | C-to-Native Compilation | Transpiler-to-EXE | Labyrinx (Multi-Layer) |
+|-----------------|----------------------|------------------------|-------------------|----------------------|
+| **Name Obfuscation** | ✅ | ❌ (keeps original names) | ❌ (keeps original names) | ✅ (random tokens) |
+| **String Encryption** | ✅ (runtime encrypted) | ❌ (plain strings in binary) | ❌ (plain strings in binary) | ✅ (AES-256 at rest) |
+| **Control Flow Flattening** | ✅ (basic) | ❌ | ❌ | ✅ (switch-case dispatch) |
+| **Module Encryption** | ✅ (bytecode encryption) | ❌ | ❌ | ✅ (AES-256 + compression) |
+| **Native Compilation** | ❌ (bytecode remains) | ✅ (C → .pyd) | ✅ (C → EXE) | ✅ (Cython → x64 .pyd) |
+| **Code Virtualization** | ❌ | ❌ | ❌ | ✅ (custom VM, per-build randomized) |
+| **Anti-Debug** | ❌ | ❌ | ❌ | ✅ (multi-point detection) |
+| **Built-in License System** | Available in paid tiers | ❌ | ❌ | ✅ (HMAC-signed, HWID-bound) |
 
-### What Each Tool Stops
+### What Each Approach Stops
 
-| Attack Method | Labyrinx | PyArmor | Cython | Nuitka |
-|---------------|----------|---------|--------|--------|
-| **Decompilation (pycdc, uncompyle6)** | ✅ Blocked — native code, no bytecode | ⚠️ Blocked while encrypted | ✅ Blocked — no bytecode | ✅ Blocked — no bytecode |
-| **`strings.exe` (static string extraction)** | ✅ All strings AES-256 encrypted | ⚠️ Encrypted at runtime only | ❌ All strings visible | ❌ All strings visible |
-| **PyInstaller extraction (pyinstxtractor)** | ✅ Not a PyInstaller bundle | ⚠️ Bundle can be extracted | ✅ Not applicable | ✅ Not applicable |
-| **Runtime memory dumps** | ⚠️ Strings decrypted on use | ⚠️ Bytecode decrypted on import | ⚠️ Code in .text section | ⚠️ Code in .text section |
-| **Dynamic analysis (Frida, x64dbg)** | ⚠️ Anti-debug raises barrier | ❌ No protection | ❌ No protection | ❌ No protection |
+| Attack Method | Bytecode Obfuscation | C-to-Native Compilation | Transpiler-to-EXE | Labyrinx |
+|---------------|---------------------|------------------------|-------------------|----------|
+| **Decompilation (pycdc, uncompyle6)** | ⚠️ Blocked while encrypted | ✅ No bytecode remains | ✅ No bytecode remains | ✅ No bytecode remains |
+| **`strings.exe` (static string extraction)** | ⚠️ Encrypted at runtime | ❌ All strings visible | ❌ All strings visible | ✅ AES-256 encrypted |
+| **EXE extraction (pyinstxtractor)** | ⚠️ Bundle can be extracted | ✅ Not an EXE bundle | ✅ Not applicable | ✅ Not an EXE bundle |
+| **Runtime memory dumps** | ⚠️ Bytecode decrypted on import | ⚠️ Code in .text section | ⚠️ Code in .text section | ⚠️ Strings decrypted on use |
+| **Dynamic analysis (Frida, x64dbg)** | ❌ No protection | ❌ No protection | ❌ No protection | ⚠️ Anti-debug raises barrier |
 | **Full reverse engineering** | ❌ Nothing is unbreakable | ❌ Nothing is unbreakable | ❌ Nothing is unbreakable | ❌ Nothing is unbreakable |
 
-> **Honest note:** No tool makes Python code mathematically unbreakable. The goal is to make reverse engineering **cost more than rewriting** — turning a 30-second decompile into days or weeks of work.
+> **Honest note:** No approach makes Python code mathematically unbreakable. The goal is to make reverse engineering **cost more than rewriting** — turning a 30-second decompile into days or weeks of work.
 
 ---
 
 ## Output Format: Folders vs Single EXE
 
-This is the biggest architectural difference:
+This is the most important architectural decision:
+
+### Single-File EXE Approach
+
+The traditional approach bundles your Python interpreter + code + dependencies into one `.exe`. On launch, it extracts everything to a temp folder.
+
+**Pros:** Single-file distribution, familiar `.exe` format.
+
+**Cons:** Extracts to `%TEMP%` on every launch (slower cold start), packed EXEs frequently trigger antivirus heuristic scanners, the entire EXE must be rebuilt and replaced for updates, and the extraction process is a well-known attack vector (`pyinstxtractor` recovers bytecode in seconds).
 
 ### Labyrinx: Embedded Python Folder
+
 ```
 MyApp/
 ├── MyApp.exe              ← 30 KB launcher
@@ -67,81 +76,72 @@ MyApp/
 └── Lib/site-packages/     ← dependencies
 ```
 
-**Pros:** No temp extraction, instant start, AV-friendly (no EXE packing), supports incremental updates by swapping individual `.pyd` files.
+**Pros:** No temp extraction (instant start), AV-friendly (no EXE packing triggers heuristic scanners), supports incremental updates by swapping individual `.pyd` files, plain files on disk with no shellcode signatures.
 
 **Cons:** Folder distribution (must zip), larger disk footprint, users can see the folder structure.
 
-### PyArmor + PyInstaller: Single EXE
-```
-MyApp.exe                  ← encrypted bytecode + Python runtime
-```
+### Why We Chose Folders
 
-**Pros:** Single-file distribution, familiar .exe format.
-
-**Cons:** Extracts to temp folder on every launch (antivirus alert risk), slower cold start, entire EXE must be replaced for updates.
-
-### Why Labyrinx chose folders
-
-After living with PyInstaller for years, we found that antivirus false positives were the #1 customer complaint. Folders with plain files and a tiny launcher don't trigger AV heuristics the way packed EXEs do. The tradeoff (zipping a folder) is one extra click for the user — worth it for the support load it eliminates.
+After years of shipping desktop software, we found that antivirus false positives were the #1 support issue with the single-EXE approach. Folders with plain files and a tiny launcher don't trigger AV heuristics the way packed EXEs do. The tradeoff (zipping a folder instead of a single EXE) is one extra click for the user — worth it for eliminating the most common support complaint.
 
 ---
 
 ## Pricing Comparison
 
-| | Labyrinx | PyArmor | Cython | Nuitka |
-|---|----------|---------|--------|--------|
-| **Free Tier** | ✅ Freemium (levels 1-2) | ✅ Free version | ✅ Always free | ✅ Always free |
-| **Paid Tier** | $9-$29/mo | $49-$199 (one-time) | — | — |
-| **License Model** | Monthly subscription | Perpetual license | Open source | Open source |
-| **License System Included** | ✅ (Pro/Enterprise) | ✅ (core feature) | ❌ | ❌ |
-| **Royalties on Output** | None | None | None | None |
+| | Bytecode Obfuscation Tools | C-to-Native Compilers | Transpiler Compilers | Labyrinx |
+|---|---------------------------|----------------------|---------------------|----------|
+| **Free Tier** | ✅ Often available | ✅ Always free | ✅ Always free | ✅ Freemium (levels 1-2) |
+| **Paid Tier** | $49-$199 (one-time) | — | — | $9-$29/mo |
+| **License Model** | One-time or subscription | Open source | Open source | Monthly subscription |
+| **License System Included** | Varies | ❌ | ❌ | ✅ (Pro/Enterprise) |
+| **Royalties on Output** | Varies | None | None | None |
 
 ---
 
-## When to Use Each Tool
+## When to Choose Each Approach
 
-### Choose Labyrinx if:
-- You want **multiple protection layers** (obfuscation + compilation + encryption + VM)
-- AV-friendliness matters to you (no EXE packing, no temp extraction)
-- You need a **built-in license key system** for selling your software
-- You want incremental updates (swap individual .pyd files)
-- You're okay with folder-based distribution (zip and ship)
-
-### Choose PyArmor if:
-- You need **cross-platform support** (Windows, Linux, macOS)
-- You strongly prefer single-file EXE output (via PyInstaller)
+### Choose Bytecode Obfuscation if:
+- You need cross-platform support (Windows, Linux, macOS)
+- You strongly prefer single-file EXE output
 - You want a one-time purchase rather than subscription
-- You don't need native compilation (bytecode-level protection is enough)
+- Native compilation isn't a requirement for your use case
 
-### Choose Cython if:
-- You're focused on **performance** (Cython can be 2-100x faster)
+### Choose C-to-Native Compilation if:
+- You're focused on **performance** (can be 2-100x faster for numerical code)
 - You don't need obfuscation beyond native code compilation
-- You're comfortable writing custom `setup.py` build scripts
+- You're comfortable writing build scripts
 - You're building libraries (`.pyd`/`.so`), not standalone applications
 
-### Choose Nuitka if:
-- You want **true compilation** all the way to EXE
+### Choose Transpiler-to-EXE Compilation if:
+- You want full compilation all the way to EXE
 - You don't need obfuscation layers on top of native code
-- You need **cross-platform** output
+- You need cross-platform output
 - You prefer open source with no paid tiers
+
+### Choose Labyrinx (Multi-Layer) if:
+- You want **multiple protection layers** (obfuscation + compilation + encryption + VM)
+- **AV-friendliness matters** to you (no EXE packing, no temp extraction)
+- You need a **built-in license key system** for selling your software
+- You want incremental updates (swap individual `.pyd` files)
+- You're okay with folder-based distribution (zip and ship)
 
 ---
 
 ## The Honest Truth
 
 {: .text-center}
-*No tool is perfect. Every protection can be broken by a determined attacker with enough time and skill.*
+*No protection is perfect. Every approach can be broken by a determined attacker with enough time and skill.*
 
-What changes between these tools is **how expensive and time-consuming** that reverse engineering process becomes:
+What changes between these approaches is **how expensive and time-consuming** that reverse engineering process becomes:
 
-- **Raw .py files:** 0 seconds — the source is right there
-- **PyArmor (free):** A few hours — bytecode is encrypted but the decryptor is known
-- **Cython .pyd:** A few days — native code requires disassembly, not decompilation
-- **Labyrinx Enterprise:** Weeks+ — the attacker must defeat 7 layers: Cython native code, AES-256 encrypted strings, obfuscated control flow, compressed/encrypted modules, a custom VM with randomized instruction sets, and multiple anti-debug checks
+- **Raw `.py` files:** 0 seconds — the source is right there
+- **Bytecode obfuscation (free tier):** A few hours — bytecode is encrypted but the decryptor approach is known
+- **C-to-native compilation:** A few days — native code requires disassembly, not decompilation
+- **Labyrinx Enterprise:** Weeks+ — the attacker must defeat 7 layers: native x64 code, AES-256 encrypted strings, obfuscated control flow, compressed/encrypted modules, a custom VM with randomized instruction sets, and multiple anti-debug checks
 
 The practical goal is to raise the barrier high enough that **attackers choose an easier target**.
 
 ---
 
 {: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [How to Protect Python Code →](/protect-python-code)
+[← Back to Labyrinx](/) &nbsp;·&nbsp; [How to Protect Python Code →](/protect-python-code/)

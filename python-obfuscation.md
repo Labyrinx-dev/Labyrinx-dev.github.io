@@ -29,7 +29,7 @@ def _x7f3a(_a1, _a2):
     return _a1
 ```
 
-Obfuscation is one part of a defense-in-depth strategy. Combine it with compilation (Cython), encryption (AES-256), and virtualization for effective protection.
+Obfuscation is one part of a defense-in-depth strategy. Combine it with native compilation, AES-256 encryption, and virtualization for effective protection.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Labyrinx Blog — Python Code Protection & Obfuscation
-seo_description: Articles about Python code protection, obfuscation techniques, Cython compilation, reverse engineering defense, and shipping Python desktop applications.
+seo_description: Articles about Python code protection, obfuscation techniques, native code compilation, reverse engineering defense, and shipping Python desktop applications.
 ---
 
 # Labyrinx Blog

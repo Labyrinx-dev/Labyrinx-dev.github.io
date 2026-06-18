@@ -13,7 +13,7 @@ seo_description: Learn how to protect Python source code from reverse engineerin
 
 ## The Problem
 
-Python is distributed as source code. Even when you bundle it with PyInstaller, `pyinstxtractor` extracts the `.pyc` bytecode, and `pycdc` / `uncompyle6` decompile it back to readable Python in seconds.
+Python is distributed as source code. Even when bundled into an EXE, well-known extraction tools recover the `.pyc` bytecode, and decompilers (`pycdc`, `uncompyle6`) turn it back into readable Python in seconds.
 
 ```bash
 # An attacker extracts your entire source in under a minute:
@@ -40,14 +40,14 @@ This isn't a Python flaw — it's inherent to how interpreted languages work. Pr
 **What it stops:** Casual reading. A curious developer opening your `.py` file.
 **What it doesn't stop:** Anyone with a debugger. Names are cosmetic.
 
-### Level 2: Compilation (Cython / Nuitka)
+### Level 2: Native Code Compilation
 
 **What it does:** Converts Python to native x64 machine code.
 
-Unlike PyInstaller (which just bundles `.pyc` bytecode), Cython and Nuitka translate Python to C, then compile with MSVC or GCC. The output is a `.pyd` (Windows) or `.so` (Linux) file — a native shared library.
+Unlike EXE bundling (which just packages `.pyc` bytecode), native compilation translates Python to C, then compiles to a `.pyd` (Windows) or `.so` (Linux) file — a native shared library.
 
 ```
-.py source → Cython → .c file → MSVC/GCC → .pyd (x64 machine code)
+.py source → C translation → .c file → C compiler → .pyd (x64 machine code)
 ```
 
 **What it stops:** Decompilation. There's no bytecode to decompile. An attacker gets assembly, not Python.
@@ -125,7 +125,7 @@ Each layer independently raises the cost of reverse engineering. Together, they 
 
 **Immediate (free):** Use [`pyobfuscate`](https://pypi.org/project/pyobfuscate/) or [`pyminifier`](https://pypi.org/project/pyminifier/) to rename identifiers and strip comments. It's better than nothing and takes 10 seconds.
 
-**Next step (free):** Install [Cython](https://cython.org/) and compile your core modules to `.pyd`. Even without obfuscation, native code is far harder to reverse than bytecode. Requires a C compiler (MSVC on Windows, GCC on Linux).
+**Next step (free):** Use a C-to-native compiler to compile your core modules to `.pyd`. Even without obfuscation, native code is far harder to reverse than bytecode. Requires a C compiler (MSVC on Windows).
 
 **Full protection:** [Labyrinx](/compare/) automates all four levels. One-click build, output folder ships to customers. Freemium tier is free; Enterprise unlocks the full 7-layer pipeline.
 

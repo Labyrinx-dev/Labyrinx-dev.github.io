@@ -1,5 +1,5 @@
 title: Labyrinx — Python Code Obfuscation & Protection
-description: Protect Python source code with 7 layers of obfuscation. Compile Python to native x64 machine code via Cython. Compare Labyrinx vs PyArmor, Cython, and Nuitka. No Python install required on target machines. Freemium, Pro ($9/mo), and Enterprise ($29/mo).
+description: Protect Python source code with 7 layers of obfuscation. Compile Python to native x64 machine code. Compare protection approaches: folder-based embedding vs single-EXE packing vs bytecode obfuscation vs transpiler compilation. No Python install required on target machines. Freemium, Pro ($9/mo), and Enterprise ($29/mo).
 theme: jekyll-theme-cayman
 show_downloads: false
 lang: en
