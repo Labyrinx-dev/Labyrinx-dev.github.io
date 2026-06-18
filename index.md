@@ -188,6 +188,25 @@ A: Labyrinx performs deep import tracing to automatically discover required pack
 
 ---
 
+## Learn More
+
+{: .text-center}
+📖 **[Python Code Protection Tools Compared](/compare/)** — Labyrinx vs PyArmor vs Cython vs Nuitka: honest side-by-side comparison of protection layers, pricing, and output formats.
+
+{: .text-center}
+🛡️ **[How to Protect Python Source Code](/protect-python-code/)** — Complete guide: name obfuscation, Cython compilation, AES encryption, and code virtualization. What each layer can and cannot do.
+
+{: .text-center}
+🔬 **[Python Obfuscation Techniques](/python-obfuscation/)** — Deep dive into all 7 obfuscation layers with code examples. From basic name mangling to custom VM bytecode.
+
+{: .text-center}
+📦 **[How to Compile Python to a Standalone Windows App](/compile-python-to-exe/)** — PyInstaller vs Nuitka vs Cython vs Labyrinx compared. Why folder-based distribution avoids antivirus false positives.
+
+{: .text-center}
+📝 **[Labyrinx Blog](/blog/)** — Articles about Python code protection, obfuscation techniques, and shipping Python desktop applications.
+
+---
+
 {: .text-center}
 Labyrinx is available now. [Download for free](#get-started) or [subscribe](#get-started) to unlock Enterprise protection.
 
