@@ -185,4 +185,4 @@ Two variants:
 *Defense in depth. Each layer independently raises the cost. Together, they make RE a weeks-long project rather than a 30-second decompile.*
 
 {: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [How to Protect Python Code →](/protect-python-code/)
+[← Back to Labyrinx](/) &nbsp;·&nbsp; [How to Protect Python Code →](/protect-python-code)

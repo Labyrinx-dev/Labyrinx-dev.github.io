@@ -191,16 +191,16 @@ A: Labyrinx performs deep import tracing to automatically discover required pack
 ## Learn More
 
 {: .text-center}
-📖 **[Python Code Protection Approaches Compared](/compare/)** — Folder-based embedded distribution vs single-EXE packing vs bytecode obfuscation vs transpiler compilation.
+📖 **[Python Code Protection Approaches Compared](/compare)** — Folder-based embedded distribution vs single-EXE packing vs bytecode obfuscation vs transpiler compilation.
 
 {: .text-center}
-🛡️ **[How to Protect Python Source Code](/protect-python-code/)** — Complete guide: name obfuscation, native code compilation, AES encryption, and code virtualization.
+🛡️ **[How to Protect Python Source Code](/protect-python-code)** — Complete guide: name obfuscation, native code compilation, AES encryption, and code virtualization.
 
 {: .text-center}
-🔬 **[Python Obfuscation Techniques](/python-obfuscation/)** — Deep dive into all 7 obfuscation layers with code examples.
+🔬 **[Python Obfuscation Techniques](/python-obfuscation)** — Deep dive into all 7 obfuscation layers with code examples.
 
 {: .text-center}
-📦 **[How to Compile Python to a Standalone Windows App](/compile-python-to-exe/)** — EXE bundling vs transpiler vs native compilation vs Labyrinx compared.
+📦 **[How to Compile Python to a Standalone Windows App](/compile-python-to-exe)** — EXE bundling vs transpiler vs native compilation vs Labyrinx compared.
 
 ---
 

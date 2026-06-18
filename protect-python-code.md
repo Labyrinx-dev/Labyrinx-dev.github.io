@@ -117,4 +117,4 @@ Each layer independently raises the cost of reverse engineering. Together, they 
 ---
 
 {: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [Python Code Protection Approaches Compared →](/compare/)
+[← Back to Labyrinx](/) &nbsp;·&nbsp; [Python Code Protection Approaches Compared →](/compare)

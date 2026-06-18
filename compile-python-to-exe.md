@@ -111,4 +111,4 @@ After years of dealing with AV false positives from single-EXE bundlers, we chos
 ---
 
 {: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [Python Code Protection Approaches Compared →](/compare/)
+[← Back to Labyrinx](/) &nbsp;·&nbsp; [Python Code Protection Approaches Compared →](/compare)
