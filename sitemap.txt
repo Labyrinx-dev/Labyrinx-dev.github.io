@@ -3,3 +3,4 @@ https://labyrinx-dev.github.io/compare
 https://labyrinx-dev.github.io/protect-python-code
 https://labyrinx-dev.github.io/python-obfuscation
 https://labyrinx-dev.github.io/compile-python-to-exe
+https://labyrinx-dev.github.io/privacy
