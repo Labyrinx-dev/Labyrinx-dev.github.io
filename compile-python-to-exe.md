@@ -1,13 +1,12 @@
 ---
-layout: default
+layout: subpage
 title: How to Compile Python to a Standalone Windows Application (2026)
 seo_description: Complete guide to distributing Python code as a standalone Windows application. Compare EXE bundling, transpiler compilation, C-to-native compilation, and multi-layer protection with embedded runtime — including folder-based distribution that avoids antivirus false positives.
 ---
 
 # How to Compile Python to a Standalone Windows Application
 
-{: .text-center}
-*Python distribution options compared: bundling, transpilation, native compilation, and multi-layer protection.*
+<p class="subtitle">Python distribution options compared: bundling, transpilation, native compilation, and multi-layer protection.</p>
 
 ---
 
@@ -110,5 +109,4 @@ After years of dealing with AV false positives from single-EXE bundlers, we chos
 
 ---
 
-{: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [Python Code Protection Approaches Compared →](/compare)
+<p style="text-align:center;margin-top:48px;"><a href="/">← Back to Labyrinx</a> &nbsp;·&nbsp; <a href="/compare">Python Code Protection Approaches Compared →</a></p>

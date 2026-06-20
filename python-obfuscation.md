@@ -1,13 +1,12 @@
 ---
-layout: default
+layout: subpage
 title: Python Obfuscation Techniques — Name Obfuscation, String Encryption, Control Flow, Code VM
 seo_description: Deep dive into Python obfuscation techniques: name obfuscation, AES-256 string encryption, control flow flattening, module encryption, code virtualization with per-build randomized instruction sets, and anti-debug detection.
 ---
 
 # Python Obfuscation Techniques: From Basic to Advanced
 
-{: .text-center}
-*Seven layers of Python code obfuscation explained — what each layer does, how it works, and what it protects against.*
+<p class="subtitle">Seven layers of Python code obfuscation explained — what each layer does, how it works, and what it protects against.</p>
 
 ---
 
@@ -181,8 +180,6 @@ Two variants:
 | 6. Anti-Debug | Debugger-based analysis | Near zero |
 | 7. PYD Integrity | Tampering, patching | < 1% |
 
-{: .text-center}
-*Defense in depth. Each layer independently raises the cost. Together, they make RE a weeks-long project rather than a 30-second decompile.*
+<p style="text-align:center;font-style:italic;">Defense in depth. Each layer independently raises the cost. Together, they make RE a weeks-long project rather than a 30-second decompile.</p>
 
-{: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [How to Protect Python Code →](/protect-python-code)
+<p style="text-align:center;margin-top:48px;"><a href="/">← Back to Labyrinx</a> &nbsp;·&nbsp; <a href="/protect-python-code">How to Protect Python Code →</a></p>

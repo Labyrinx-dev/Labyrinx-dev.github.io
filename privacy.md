@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: subpage
 title: Privacy Statement
 seo_description: Labyrinx privacy statement — what data we collect, how we use it, and your rights.
 ---
@@ -113,5 +113,4 @@ If you have questions about this privacy statement, contact us:
 
 ---
 
-{: .text-center}
-[← Back to Labyrinx](/)
+<p style="text-align:center;margin-top:48px;"><a href="/">← Back to Labyrinx</a></p>

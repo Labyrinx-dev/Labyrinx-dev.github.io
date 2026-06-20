@@ -1,13 +1,12 @@
 ---
-layout: default
+layout: subpage
 title: How to Protect Python Source Code — A Complete Guide
 seo_description: Learn how to protect Python source code from reverse engineering. Covers name obfuscation, native code compilation, AES string encryption, and code virtualization. Honest about what each protection layer can and cannot do.
 ---
 
 # How to Protect Python Source Code from Reverse Engineering
 
-{: .text-center}
-*Python ships as readable text. Here's how to change that — from basic obfuscation to custom virtual machines.*
+<p class="subtitle">Python ships as readable text. Here's how to change that — from basic obfuscation to custom virtual machines.</p>
 
 ---
 
@@ -116,5 +115,4 @@ Each layer independently raises the cost of reverse engineering. Together, they 
 
 ---
 
-{: .text-center}
-[← Back to Labyrinx](/) &nbsp;·&nbsp; [Python Code Protection Approaches Compared →](/compare)
+<p style="text-align:center;margin-top:48px;"><a href="/">← Back to Labyrinx</a> &nbsp;·&nbsp; <a href="/compare">Python Code Protection Approaches Compared →</a></p>

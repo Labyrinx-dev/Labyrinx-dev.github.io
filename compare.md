@@ -1,13 +1,12 @@
 ---
-layout: default
+layout: subpage
 title: Python Code Protection Approaches Compared
 seo_description: Compare approaches to protecting Python source code. Folder-based embedded distribution vs single-file EXE packing vs bytecode obfuscation vs transpiler compilation. Output format, protection layers, AV-friendliness.
 ---
 
 # Python Code Protection Approaches Compared
 
-{: .text-center}
-*An honest comparison of different approaches to protecting Python source code.*
+<p class="subtitle">An honest comparison of different approaches to protecting Python source code.</p>
 
 ---
 
@@ -87,8 +86,7 @@ Best for: multiple protection layers, AV-friendliness, built-in license system f
 
 ## The Honest Truth
 
-{: .text-center}
-*No protection is unbreakable. The goal is making reverse engineering cost more than rewriting.*
+<p style="text-align:center;font-style:italic;">No protection is unbreakable. The goal is making reverse engineering cost more than rewriting.</p>
 
 - **Raw `.py` files:** 0 seconds
 - **Bytecode obfuscation (free tier):** Hours
@@ -97,5 +95,4 @@ Best for: multiple protection layers, AV-friendliness, built-in license system f
 
 ---
 
-{: .text-center}
-[← Back to Labyrinx](/)
+<p style="text-align:center;margin-top:48px;"><a href="/">← Back to Labyrinx</a></p>

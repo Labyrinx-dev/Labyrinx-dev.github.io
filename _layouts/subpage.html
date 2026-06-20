@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — Labyrinx{% else %}Labyrinx{% endif %}</title>
+  <meta name="description" content="{% if page.seo_description %}{{ page.seo_description }}{% else %}Protect Python source code with 7 layers of obfuscation. Compile Python to native x64 machine code.{% endif %}" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCTPZHBSP7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JCTPZHBSP7');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Labyrinx">
+  <meta property="og:title" content="{{ page.title | default: 'Labyrinx' }}">
+  <meta property="og:description" content="{% if page.seo_description %}{{ page.seo_description }}{% else %}Protect Python source code with 7 layers of obfuscation.{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/labyrinx_pro.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: 'Labyrinx' }}">
+  <meta name="twitter:description" content="{% if page.seo_description %}{{ page.seo_description }}{% else %}Protect Python source code with 7 layers of obfuscation.{% endif %}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/labyrinx_pro.png">
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/labyrinx.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/labyrinx.png">
+
+  <style>
+    :root {
+      --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace;
+      --color-bg: #0a0a0a;
+      --color-surface: #141414;
+      --color-border: #262626;
+      --color-text-primary: #fafafa;
+      --color-text-secondary: #a1a1a1;
+      --color-accent: #00b894;
+      --color-accent-hover: #00d6a8;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --max-width: 800px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { color: var(--color-accent-hover); }
+
+    /* ── Header ── */
+    .subpage-header {
+      padding: 32px 24px;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .subpage-header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    .subpage-header .back-link {
+      margin-left: auto;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
+
+    .subpage-header .back-link:hover {
+      color: var(--color-accent);
+    }
+
+    /* ── Content ── */
+    .subpage-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .subpage-content h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+
+    .subpage-content .subtitle {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      margin: 0 0 40px;
+    }
+
+    .subpage-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 48px 0 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .subpage-content h2:first-of-type {
+      border-top: none;
+    }
+
+    .subpage-content h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 32px 0 12px;
+    }
+
+    .subpage-content h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      color: var(--color-accent);
+    }
+
+    .subpage-content p {
+      margin: 0 0 16px;
+      color: var(--color-text-secondary);
+    }
+
+    .subpage-content strong {
+      color: var(--color-text-primary);
+    }
+
+    .subpage-content ul, .subpage-content ol {
+      margin: 0 0 16px;
+      padding-left: 24px;
+      color: var(--color-text-secondary);
+    }
+
+    .subpage-content li {
+      margin-bottom: 6px;
+    }
+
+    .subpage-content blockquote {
+      margin: 24px 0;
+      padding: 16px 20px;
+      background: var(--color-surface);
+      border-left: 3px solid var(--color-accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+
+    .subpage-content blockquote p {
+      margin: 0;
+    }
+
+    /* ── Code ── */
+    .subpage-content code {
+      background: var(--color-surface);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--color-accent);
+    }
+
+    .subpage-content pre {
+      background: #000;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin: 16px 0 24px;
+    }
+
+    .subpage-content pre code {
+      background: none;
+      padding: 0;
+      color: #e5e5e5;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* ── Tables ── */
+    .subpage-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 0.9rem;
+    }
+
+    .subpage-content thead {
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .subpage-content th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+    }
+
+    .subpage-content td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+    }
+
+    .subpage-content tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ── Horizontal rule ── */
+    .subpage-content hr {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 40px 0;
+    }
+
+    /* ── Back link at bottom ── */
+    .subpage-footer-nav {
+      text-align: center;
+      margin: 48px 0 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.95rem;
+    }
+
+    .subpage-footer-nav a {
+      color: var(--color-text-secondary);
+    }
+    .subpage-footer-nav a:hover {
+      color: var(--color-accent);
+    }
+
+    /* ── Footer ── */
+    .subpage-footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--color-text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .subpage-footer a {
+      color: var(--color-text-secondary);
+    }
+    .subpage-footer a:hover {
+      color: var(--color-accent);
+    }
+
+    @media (max-width: 640px) {
+      .subpage-content h1 { font-size: 1.75rem; }
+      .subpage-content { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="subpage-header">
+    <a href="/"><img src="/assets/labyrinx.png" alt="Labyrinx"></a>
+    <a href="/" style="color:var(--color-text-primary);font-weight:600;">Labyrinx</a>
+    <a href="/" class="back-link">&larr; Back to Home</a>
+  </div>
+
+  <div class="subpage-content">
+    {{ content }}
+  </div>
+
+  <div class="subpage-footer">
+    <p>&copy; 2026 Labyrinx. All rights reserved. &middot; <a href="/privacy">Privacy</a></p>
+  </div>
+
+</body>
+</html>
