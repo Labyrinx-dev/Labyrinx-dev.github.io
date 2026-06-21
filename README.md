@@ -7,7 +7,7 @@
 ## Quick Links
 
 - 🌐 **Website:** [labyrinx-dev.github.io](https://labyrinx-dev.github.io)
-- 📥 **Download:** [Labyrinx Setup ZIP](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_setup.zip) (34 MB, extract & run)
+- 📥 **Download:** [Labyrinx_Setup.exe](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_Setup.exe) (45 MB, run to install)
 - 🛒 **Pro ($9/mo):** [Subscribe](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92)
 - 🛒 **Enterprise ($29/mo):** [Subscribe](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3)
 
