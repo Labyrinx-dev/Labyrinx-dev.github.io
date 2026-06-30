@@ -2,12 +2,12 @@
 
 **Turn Python projects into protected, self-contained application folders.**
 
-7 layers of obfuscation. Native x64 compilation via Cython. Embedded Python runtime — no install required on target machines. Freemium with Pro ($9/mo) and Enterprise ($29/mo) tiers.
+6 levels of protection. Native x64 compilation via Cython. Embedded Python runtime — no install required on target machines. Freemium with Pro ($9/mo) and Enterprise ($29/mo) tiers.
 
 ## Quick Links
 
 - 🌐 **Website:** [labyrinx-dev.github.io](https://labyrinx-dev.github.io)
-- 📥 **Download:** [Labyrinx_Setup.zip](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v1.0/Labyrinx_Setup.zip) (45 MB, extract & run)
+- 📥 **Download:** [Labyrinx_Setup.zip](https://github.com/Labyrinx-dev/Labyrinx-dev.github.io/releases/download/v3.4/Labyrinx_Setup.zip) (33 MB, extract & run)
 - 🛒 **Pro ($9/mo):** [Subscribe](https://labyrinx.lemonsqueezy.com/checkout/buy/d9731dc3-df7c-441c-b308-310696483a92)
 - 🛒 **Enterprise ($29/mo):** [Subscribe](https://labyrinx.lemonsqueezy.com/checkout/buy/d97c655e-ebd8-4370-b868-158498d220d3)
 
