@@ -111,7 +111,7 @@ Each layer independently raises the cost of reverse engineering. Together, they 
 
 **Next step (free):** Use a C-to-native compiler to compile your core modules to `.pyd`. Even without obfuscation, native code is far harder to reverse than bytecode. Requires a C compiler (MSVC on Windows).
 
-**Full protection:** [Labyrinx](/) automates all four levels. One-click build, output folder ships to customers. Freemium tier is free; Enterprise unlocks the full 7-layer pipeline.
+**Full protection:** [Labyrinx](/) automates all four levels. One-click build, output folder ships to customers. Freemium tier is free; Enterprise unlocks the full 6-level pipeline.
 
 ---
 
