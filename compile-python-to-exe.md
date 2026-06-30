@@ -60,7 +60,7 @@ Python is an interpreted language — there's no compiler in the traditional sen
 
 ## Approach 4: Labyrinx (Multi-Layer + Embedded Runtime)
 
-**What it does:** Applies 7 layers of obfuscation, compiles to native x64, and bundles with an embedded Python runtime. Output is a self-contained folder.
+**What it does:** Applies 6 levels of obfuscation, compiles to native x64, and bundles with an embedded Python runtime. Output is a self-contained folder.
 
 ```
 1. Name obfuscation → rename all identifiers
@@ -88,9 +88,9 @@ Python is an interpreted language — there's no compiler in the traditional sen
 | **Output** | Single EXE | Folder with EXE | Individual .pyd | Folder with launcher |
 | **AV-friendly** | ❌ False positives | ⚠️ Mixed | ✅ | ✅ |
 | **Cold start** | 1-5 sec (extraction) | Instant | Instant | Instant |
-| **RE difficulty** | ⭐ (trivial) | ⭐⭐ (assembly) | ⭐⭐ (assembly) | ⭐⭐⭐⭐⭐ (7 layers) |
+| **RE difficulty** | ⭐ (trivial) | ⭐⭐ (assembly) | ⭐⭐ (assembly) | ⭐⭐⭐⭐⭐ (6 levels) |
 | **String protection** | ❌ | ❌ | ❌ | ✅ AES-256 |
-| **Obfuscation** | ❌ | ❌ | ❌ | ✅ 7 layers |
+| **Obfuscation** | ❌ | ❌ | ❌ | ✅ 6 levels |
 | **Built-in license system** | ❌ | ❌ | ❌ | ✅ |
 | **Price** | Free | Free | Free | Freemium / $9-$29/mo |
 

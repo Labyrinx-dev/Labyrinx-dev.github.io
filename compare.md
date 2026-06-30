@@ -91,7 +91,7 @@ Best for: multiple protection layers, AV-friendliness, built-in license system f
 - **Raw `.py` files:** 0 seconds
 - **Bytecode obfuscation (free tier):** Hours
 - **C-to-native compilation:** Days (assembly, not bytecode)
-- **Labyrinx Enterprise:** Weeks+ (7 layers: native code + AES-256 strings + flattened control flow + encrypted modules + custom VM + anti-debug + integrity hashes)
+- **Labyrinx Enterprise:** Weeks+ (6 levels: native code + AES-256 strings + flattened control flow + encrypted modules + custom VM + anti-debug + integrity hashes)
 
 ---
 

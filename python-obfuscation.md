@@ -6,7 +6,7 @@ seo_description: Deep dive into Python obfuscation techniques: name obfuscation,
 
 # Python Obfuscation Techniques: From Basic to Advanced
 
-<p class="subtitle">Seven layers of Python code obfuscation explained — what each layer does, how it works, and what it protects against.</p>
+<p class="subtitle">Six levels of Python code obfuscation explained — what each layer does, how it works, and what it protects against.</p>
 
 ---
 
