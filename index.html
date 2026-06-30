@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Labyrinx — Python Code Obfuscation &amp; Protection</title>
-  <meta name="description" content="Protect Python source code with 7 layers of obfuscation. Compile to native x64 machine code via Cython. No Python install required on target machines. Freemium, Pro ($9/mo), and Enterprise ($29/mo)." />
+  <meta name="description" content="Protect Python source code with 6 levels of protection. Compile to native x64 machine code via Cython. No Python install required on target machines. Freemium, Pro ($9/mo), and Enterprise ($29/mo)." />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCTPZHBSP7"></script>
@@ -21,14 +21,14 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Labyrinx">
   <meta property="og:title" content="Labyrinx — Python Code Obfuscation &amp; Protection">
-  <meta property="og:description" content="Protect Python source code with 7 layers of obfuscation. Compile to native x64 machine code via Cython. No Python install required on target machines.">
+  <meta property="og:description" content="Protect Python source code with 6 levels of protection. Compile to native x64 machine code via Cython. No Python install required on target machines.">
   <meta property="og:url" content="https://labyrinx-dev.github.io/">
   <meta property="og:image" content="https://labyrinx-dev.github.io/assets/labyrinx_pro.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Labyrinx — Python Code Obfuscation &amp; Protection">
-  <meta name="twitter:description" content="Protect Python source code with 7 layers of obfuscation. Compile to native x64 machine code via Cython.">
+  <meta name="twitter:description" content="Protect Python source code with 6 levels of protection. Compile to native x64 machine code via Cython.">
   <meta name="twitter:image" content="https://labyrinx-dev.github.io/assets/labyrinx_pro.png">
 
   <!-- SEO -->
@@ -557,35 +557,31 @@
   </section>
 
   <section class="container">
-    <h2>Seven Layers of Protection</h2>
+    <h2>Six Levels of Protection</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <h3><span class="layer-num">1</span>Name Obfuscation<span class="tier-badge tier-freemium">Freemium</span></h3>
-        <p>Variables, functions, and classes renamed to random tokens. Baseline protection that requires no configuration.</p>
+        <h3><span class="layer-num">1</span>Docstring &amp; Comment Removal<span class="tier-badge tier-freemium">Freemium</span></h3>
+        <p>Strips all comments and docstrings from source before compilation. The first line of defense — shipping clean compiled code.</p>
       </div>
       <div class="feature-card">
-        <h3><span class="layer-num">2</span>Control Flow Flattening<span class="tier-badge tier-pro">Pro</span></h3>
-        <p>Function logic restructured into non-linear execution paths, making static analysis significantly harder.</p>
+        <h3><span class="layer-num">2</span>AST Name Mangling<span class="tier-badge tier-freemium">Freemium</span></h3>
+        <p>Every class, method, function, and variable renamed to SHA-256 hash tokens. Multi-pass cross-file analysis ensures consistent renaming. 650+ cryptographically opaque identifiers in a typical project.</p>
       </div>
       <div class="feature-card">
         <h3><span class="layer-num">3</span>String Encryption<span class="tier-badge tier-pro">Pro</span></h3>
-        <p>Every string literal encrypted — invisible to strings.exe and other simple inspection tools.</p>
+        <p>Every string literal encrypted — invisible to strings.exe and other simple inspection tools. Multiple encoding schemes available.</p>
       </div>
       <div class="feature-card">
-        <h3><span class="layer-num">4</span>Module Encryption (Compression)<span class="tier-badge tier-pro">Pro</span></h3>
-        <p>Entire source protected in a wrapped blob. Lightweight protection layer before shipping.</p>
+        <h3><span class="layer-num">4</span>Control Flow + Module Encryption<span class="tier-badge tier-pro">Pro</span></h3>
+        <p>Function logic restructured into non-linear execution paths. Entire modules wrapped in encrypted containers (Pro: compression, Enterprise: AES-256).</p>
       </div>
       <div class="feature-card">
-        <h3><span class="layer-num">5</span>Module Encryption (AES-256)<span class="tier-badge tier-enterprise">Enterprise</span></h3>
-        <p>Entire source AES-256 encrypted. Decompilation yields only opaque ciphertext.</p>
+        <h3><span class="layer-num">5</span>Anti-Debug Protection<span class="tier-badge tier-enterprise">Enterprise</span></h3>
+        <p>Multiple detection techniques across application and system layers. Hardened against debuggers, disassemblers, and tampering tools.</p>
       </div>
       <div class="feature-card">
-        <h3><span class="layer-num">6</span>Anti-Debug<span class="tier-badge tier-enterprise">Enterprise</span></h3>
-        <p>Multiple detection techniques across multiple layers. Hardened against debuggers and disassemblers.</p>
-      </div>
-      <div class="feature-card">
-        <h3><span class="layer-num">7</span>Code Virtualization<span class="tier-badge tier-enterprise">Enterprise</span></h3>
-        <p>Custom VM with per-build randomized instruction set. State-of-the-art protection against reverse engineering.</p>
+        <h3><span class="layer-num">6</span>Code Virtualization<span class="tier-badge tier-enterprise">Enterprise</span></h3>
+        <p>Custom VM with per-build randomized opcode numbering and instruction set. Decoy instruction injection. Maximum protection against reverse engineering.</p>
       </div>
     </div>
   </section>
