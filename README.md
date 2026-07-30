@@ -4,6 +4,14 @@
 
 6 levels of protection. Native x64 compilation via Cython. Embedded Python runtime — no install required on target machines. Freemium with Pro ($9/mo) and Enterprise ($29/mo) tiers.
 
+## 🎉 Free Enterprise Trial — Until 31 August 2026
+
+Full Enterprise tier unlocked. All 6 levels: AES-256 encryption, anti-debug, code virtualization, license system. No credit card required.
+
+**Trial key:** `RnJlZSBFbnRlcnByaXNlIFRyaWFsfDE3ODgxMDU2MDB8ZW50ZXJwcmlzZQ==.b7cafc7fd56d0393`
+
+Paste into Labyrinx Admin → License Key Management to activate.
+
 ## Quick Links
 
 - 🌐 **Website:** [labyrinx-dev.github.io](https://labyrinx-dev.github.io)
@@ -13,15 +21,15 @@
 
 ## Features
 
-| Layer | Protection |
-|-------|-----------|
-| Name Obfuscation | Variables, functions, classes renamed to random tokens |
-| Control Flow Flattening | Logic restructured into non-linear execution paths |
-| String Encryption | Every string literal encrypted (AES) |
-| Module Encryption | Entire source protected in encrypted blob |
-| Anti-Debug | Multiple detection techniques |
-| Code Virtualization | Custom VM with per-build randomized instruction set |
-| License System | Signed license keys with HWID binding and expiry dates |
+| Level | Protection | Tier |
+|-------|-----------|------|
+| 1. Docstring Removal | Strips all comments and docstrings before compilation | Freemium |
+| 2. AST Name Mangling | Renames all identifiers to random tokens | Freemium |
+| 3. Control Flow + String Encrypt | Flattened logic + per-string AES encryption | Pro |
+| 4. Module Encryption | Entire source in AES-encrypted container | Pro |
+| 5. Anti-Debug Protection | 7+ detection techniques (debugger, VM, injection) | Enterprise |
+| 6. Code Virtualization | Custom VM with per-build randomized opcode map | Enterprise |
+| — License System | Signed license keys with HWID binding, expiry, tier | Pro+ |
 
 ## Requirements
 

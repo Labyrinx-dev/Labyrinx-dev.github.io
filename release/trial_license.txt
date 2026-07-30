@@ -1,2 +1,18 @@
-RnJlZSBQcm8gVHJpYWx8MTc4NTQ5MzcxMXxwcm8=.4230fcd52953ca90
-Free Pro Trial License Key - expires July 31, 2026
+Free Enterprise Trial — All 6 Levels
+Expires: 31 August 2026
+Tier: Enterprise
+
+Copy this key into Labyrinx Admin -> License Key Management:
+
+RnJlZSBFbnRlcnByaXNlIFRyaWFsfDE3ODgxMDU2MDB8ZW50ZXJwcmlzZQ==.b7cafc7fd56d0393
+
+This key unlocks:
+- Level 1: Docstring & Comment Removal
+- Level 2: AST Name Mangling
+- Level 3: Control Flow Flattening + String Encryption
+- Level 4: Module Encryption (AES-256)
+- Level 5: Anti-Debug Protection
+- Level 6: Code Virtualization
+- License system for your own customers
+
+No sign-up required. No payment required. Expires 31 August 2026.
