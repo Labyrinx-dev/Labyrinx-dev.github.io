@@ -4,11 +4,11 @@
 
 6 levels of protection. Native x64 compilation via Cython. Embedded Python runtime — no install required on target machines. Freemium with Pro ($9/mo) and Enterprise ($29/mo) tiers.
 
-## 🎉 Free Enterprise Trial — Until 31 August 2026
+## 🎉 Free Enterprise Trial — Until 30 September 2026
 
 Full Enterprise tier unlocked. All 6 levels: AES-256 encryption, anti-debug, code virtualization, license system. No credit card required.
 
-**Trial key:** `RnJlZSBFbnRlcnByaXNlIFRyaWFsfDE3ODgxMDU2MDB8ZW50ZXJwcmlzZQ==.b7cafc7fd56d0393`
+**Trial key:** `RnJlZSBFbnRlcnByaXNlIFRyaWFsfDE3OTA3ODQwMDB8ZW50ZXJwcmlzZQ==.b6b7320ce244802d`
 
 Paste into Labyrinx Admin → License Key Management to activate.
 

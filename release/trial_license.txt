@@ -1,10 +1,10 @@
 Free Enterprise Trial — All 6 Levels
-Expires: 31 August 2026
+Expires: 30 September 2026
 Tier: Enterprise
 
 Copy this key into Labyrinx Admin -> License Key Management:
 
-RnJlZSBFbnRlcnByaXNlIFRyaWFsfDE3ODgxMDU2MDB8ZW50ZXJwcmlzZQ==.b7cafc7fd56d0393
+RnJlZSBFbnRlcnByaXNlIFRyaWFsfDE3OTA3ODQwMDB8ZW50ZXJwcmlzZQ==.b6b7320ce244802d
 
 This key unlocks:
 - Level 1: Docstring & Comment Removal
@@ -15,4 +15,4 @@ This key unlocks:
 - Level 6: Code Virtualization
 - License system for your own customers
 
-No sign-up required. No payment required. Expires 31 August 2026.
+No sign-up required. No payment required. Expires 30 September 2026.
